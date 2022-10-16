@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm http://xmlns.jcp.org/xml/ns/persistence/orm_2_2.xsd">
+	<persistence-unit-metadata>
+		<persistence-unit-defaults>
+			<access>FIELD</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<entity class="com.entities.IRT" access="FIELD">
+		<table name="IRTS">
+		</table>
+	</entity>
+	<entity class="com.entities.Departamento" access="FIELD">
+		<table name="DEPARTAMENTOS">
+		</table>
+	</entity>
+	<entity class="com.entities.Usuario" access="FIELD">
+		<table name="USUARIOS">
+		</table>
+	</entity>
+	<entity class="com.entities.Tutor" access="FIELD">
+		<table name="TUTORES">
+		</table>
+	</entity>
+	<entity class="com.entities.Evento" access="FIELD">
+		<table name="EVENTOS">
+		</table>
+	</entity>
+	<entity class="com.entities.Analista" access="FIELD">
+		<table name="ANALISTAS">
+		</table>
+	</entity>
+	<entity class="com.entities.Estudiante" access="FIELD">
+		<table name="ESTUDIANTES">
+		</table>
+	</entity>
+	<entity class="com.entities.Justificacion" access="FIELD">
+		<table name="JUSTIFICACIONES">
+		</table>
+	</entity>
+	<entity class="com.entities.Constancia" access="FIELD">
+		<table name="CONSTANCIAS">
+		</table>
+	</entity>
+	<entity class="com.entities.Reclamo" access="FIELD">
+		<table name="RECLAMOS">
+		</table>
+	</entity>
+</entity-mappings>
