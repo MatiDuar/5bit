@@ -1,6 +1,8 @@
 package com.entities;
 
 import java.io.Serializable;
+import java.sql.Date;
+
 import javax.persistence.*;
 
 /**
@@ -21,7 +23,7 @@ public class AccionConstancia implements Serializable {
 	private String detalleConstancia;
 	
 	//Duda si es muchas acciones a muchas contancias
-	@ManyToMany 
+	@ManyToOne
 	private Constancia constancia;
 	
 	@ManyToOne

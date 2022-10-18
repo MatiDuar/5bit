@@ -1,6 +1,8 @@
 package com.entities;
 
 import java.io.Serializable;
+import java.sql.Date;
+
 import javax.persistence.*;
 
 /**
@@ -22,7 +24,7 @@ public class AccionJustificacion implements Serializable {
 	private String detalle;
 	
 	//Duda si son muchas acciones para muchos reclamos
-	@ManyToMany 
+	@ManyToOne
 	private Reclamo reclamo;
 	
 	@ManyToOne
