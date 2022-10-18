@@ -5,10 +5,6 @@
 			<access>FIELD</access>
 		</persistence-unit-defaults>
 	</persistence-unit-metadata>
-	<entity class="com.entities.IRT" access="FIELD">
-		<table name="IRTS">
-		</table>
-	</entity>
 	<entity class="com.entities.Departamento" access="FIELD">
 		<table name="DEPARTAMENTOS">
 		</table>
@@ -43,6 +39,58 @@
 	</entity>
 	<entity class="com.entities.Reclamo" access="FIELD">
 		<table name="RECLAMOS">
+		</table>
+	</entity>
+	<entity class="com.entities.TipoTutor" access="FIELD">
+		<table name="TIPOS_TUTORES">
+		</table>
+	</entity>
+	<entity class="com.entities.AreaTutor" access="FIELD">
+		<table name="AREAS_TUTORES">
+		</table>
+	</entity>
+	<entity class="com.entities.TipoActividad" access="FIELD">
+		<table name="TIPOS_ACTIVIDADES">
+		</table>
+	</entity>
+	<entity class="com.entities.Generacion" access="FIELD">
+		<table name="GENERACIONES">
+		</table>
+	</entity>
+	<entity class="com.entities.EstadoAsistencia" access="FIELD">
+		<table name="ESTADOS_ASISTENCIAS">
+		</table>
+	</entity>
+	<entity class="com.entities.Estado" access="FIELD">
+		<table name="ESTADOS">
+		</table>
+	</entity>
+	<entity class="com.entities.AccionJustificacion" access="FIELD">
+		<table name="ACCIONES_JUSTIFICACIONES">
+		</table>
+	</entity>
+	<entity class="com.entities.TipoConstancia" access="FIELD">
+		<table name="TIPOS_CONSTANCIAS">
+		</table>
+	</entity>
+	<entity class="com.entities.AccionConstancia" access="FIELD">
+		<table name="ACCIONES_CONSTANCIAS">
+		</table>
+	</entity>
+	<entity class="com.entities.AccionReclamo" access="FIELD">
+		<table name="ACCIONES_RECLAMOS">
+		</table>
+	</entity>
+	<entity class="com.entities.ConvocatoriaAsistencia" access="FIELD">
+		<table name="CONVOCATORIAS_ASISTENCIAS">
+		</table>
+	</entity>
+	<entity class="com.entities.Genero" access="FIELD">
+		<table name="GENEROS">
+		</table>
+	</entity>
+	<entity class="com.entities.ITR" access="FIELD">
+		<table name="ITR">
 		</table>
 	</entity>
 </entity-mappings>

@@ -4,14 +4,14 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 /**
- * Entity implementation class for Entity: IRT
+ * Entity implementation class for Entity: ITR
  *
  */
-public class IRT implements Serializable {
+public class ITR implements Serializable {
 
 	
 	private static final long serialVersionUID = 1L;	
-	public IRT() {
+	public ITR() {
 		super();
 	} 
 	
