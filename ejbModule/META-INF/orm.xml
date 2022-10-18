@@ -93,4 +93,8 @@
 		<table name="ITR">
 		</table>
 	</entity>
+	<entity class="com.entities.PlantillaConstancia" access="FIELD">
+		<table name="PLANTILLAS_CONSTANCIAS">
+		</table>
+	</entity>
 </entity-mappings>

@@ -2,6 +2,7 @@ package com.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -39,6 +40,29 @@ public class Evento implements Serializable {
 	
 	@Column(nullable=false)
 	private int semestre;
+
+	
+	@ManyToMany
+	private List<Tutor> tutoresResponsable;
+	
+	@ManyToMany
+	private List<Analista> analistasGestiona;
+	
+	public List<Tutor> getTutores() {
+		return tutoresResponsable;
+	}
+
+	public void setTutores(List<Tutor> tutores) {
+		this.tutoresResponsable = tutores;
+	}
+
+	public List<Analista> getAnalista() {
+		return analistasGestiona;
+	}
+
+	public void setAnalista(List<Analista> analista) {
+		this.analistasGestiona = analista;
+	}
 
 	public Long getId() {
 		return id;
