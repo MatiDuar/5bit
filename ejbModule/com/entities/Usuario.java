@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.*;
+import javax.persistence.ManyToOne;
 
 /**
  * Entity implementation class for Entity: Usuario
@@ -24,7 +25,7 @@ public class Usuario implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long id;
+	private Long id;
 	
 	@Column(nullable=false,length=50)
 	private String documento;
