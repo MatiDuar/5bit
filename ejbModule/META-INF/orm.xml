@@ -45,4 +45,8 @@
 		<table name="RECLAMOS">
 		</table>
 	</entity>
+	<entity class="com.entities.ConvocatoriaAsistencia" access="FIELD">
+		<table name="CONVOCATORIAS_ASISTENCIAS">
+		</table>
+	</entity>
 </entity-mappings>
