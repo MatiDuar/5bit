@@ -20,10 +20,10 @@ public class Estudiante implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
-	@ManyToOne
+	@ManyToOne(optional=false)
 	private Usuario usuario;
 	
-	@ManyToOne
+	@ManyToOne(optional=false)
 	private Generacion generacion;
 
 	public Long getId() {

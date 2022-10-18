@@ -15,10 +15,10 @@ public class AccionJustificacion implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long idAccionReclamo;
+	private Long id;
 	
 	@Column(nullable=false)
-	private Date fechaHoraReclamo;
+	private Date fechaHora;
 	
 	@Column(nullable=false, length=150)
 	private String detalle;

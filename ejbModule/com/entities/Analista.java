@@ -20,7 +20,7 @@ public class Analista implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long idAnalista;
-	@ManyToOne
+	@ManyToOne(optional=false)
 	private Usuario usuario;
 	public Analista() {
 		super();

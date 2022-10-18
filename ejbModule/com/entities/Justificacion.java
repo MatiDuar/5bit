@@ -24,6 +24,8 @@ public class Justificacion implements Serializable {
 	@Column(nullable=false)
 	private Time fechaHora;
 	
+	@Column(nullable=false,length=150)
+	private String detalle;
 	@ManyToOne(optional=false)
 	private Estudiante estudiante;
 
@@ -32,6 +34,14 @@ public class Justificacion implements Serializable {
 	
 	@ManyToOne(optional=false)
 	private Estado estado;
+
+	public String getDetalle() {
+		return detalle;
+	}
+
+	public void setDetalle(String detalle) {
+		this.detalle = detalle;
+	}
 
 	public Long getId() {
 		return id;

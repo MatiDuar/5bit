@@ -24,6 +24,17 @@ public class TipoConstancia implements Serializable {
 	
 	@Column(nullable=false)
 	private Boolean activo;
+	
+	@ManyToOne
+	private PlantillaConstancia plantillaConstancia;
+
+	public PlantillaConstancia getPlantillaConstancia() {
+		return plantillaConstancia;
+	}
+
+	public void setPlantillaConstancia(PlantillaConstancia plantillaConstancia) {
+		this.plantillaConstancia = plantillaConstancia;
+	}
 
 	public Long getId() {
 		return id;

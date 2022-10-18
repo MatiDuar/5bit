@@ -14,13 +14,13 @@ public class AccionConstancia implements Serializable {
 	private static final long serialVersionUID = 1L;	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long idAccionConstancia;
+	private Long ida;
 	
 	@Column(nullable=false)
 	private Date fechaHora;
 	
 	@Column (nullable=false, length=150)
-	private String detalleConstancia;
+	private String detalle;
 	
 	//Duda si es muchas acciones a muchas contancias
 	@ManyToOne

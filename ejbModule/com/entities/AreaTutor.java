@@ -16,7 +16,7 @@ private static final long serialVersionUID = 1L;
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long idAreaTutor;
 	
-	@Column (nullable=false, length=150)
+	@Column (nullable=false, length=150,unique=true)
 	private String Nombre;
 	
 	public AreaTutor() {
