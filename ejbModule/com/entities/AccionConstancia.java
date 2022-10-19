@@ -35,13 +35,13 @@ public class AccionConstancia implements Serializable {
 	}
 
 
-	public Long getIdAccionConstancia() {
-		return idAccionConstancia;
+	public Long getId() {
+		return id;
 	}
 
 
-	public void setIdAccionConstancia(Long idAccionConstancia) {
-		this.idAccionConstancia = idAccionConstancia;
+	public void setId(Long idAccionConstancia) {
+		this.id = idAccionConstancia;
 	}
 
 
@@ -55,13 +55,13 @@ public class AccionConstancia implements Serializable {
 	}
 
 
-	public String getDetalleConstancia() {
-		return detalleConstancia;
+	public String getDetalle() {
+		return detalle;
 	}
 
 
-	public void setDetalleConstancia(String detalleConstancia) {
-		this.detalleConstancia = detalleConstancia;
+	public void setDetalle(String detalleConstancia) {
+		this.detalle = detalleConstancia;
 	}
 
 
