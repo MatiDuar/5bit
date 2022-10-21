@@ -87,9 +87,18 @@ public class AccionConstancia implements Serializable {
 
 	@Override
 	public String toString() {
-		return "AccionConstancia [idAccionConstancia=" + idAccionConstancia + ", fechaHora=" + fechaHora
-				+ ", detalleConstancia=" + detalleConstancia + ", constancia=" + constancia + ", analista=" + analista
-				+ "]";
-	} 
+		return "AccionConstancia [id=" + id + ", fechaHora=" + fechaHora + ", detalle=" + detalle + ", constancia="
+				+ constancia + ", analista=" + analista + "]";
+	}
+
+
+	
+	
+//	@Override
+//	public String toString() {
+//		return "AccionConstancia [idAccionConstancia=" + idAccionConstancia + ", fechaHora=" + fechaHora
+//				+ ", detalleConstancia=" + detalleConstancia + ", constancia=" + constancia + ", analista=" + analista
+//				+ "]";
+//	} 
    
 }

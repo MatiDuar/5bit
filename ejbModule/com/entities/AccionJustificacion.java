@@ -35,19 +35,19 @@ public class AccionJustificacion implements Serializable {
 	}
 
 	public Long getIdAccionReclamo() {
-		return idAccionReclamo;
+		return id;
 	}
 
 	public void setIdAccionReclamo(Long idAccionReclamo) {
-		this.idAccionReclamo = idAccionReclamo;
+		this.id = idAccionReclamo;
 	}
 
 	public Date getFechaHoraReclamo() {
-		return fechaHoraReclamo;
+		return fechaHora;
 	}
 
 	public void setFechaHoraReclamo(Date fechaHoraReclamo) {
-		this.fechaHoraReclamo = fechaHoraReclamo;
+		this.fechaHora = fechaHoraReclamo;
 	}
 
 	public String getDetalle() {
@@ -76,7 +76,7 @@ public class AccionJustificacion implements Serializable {
 
 	@Override
 	public String toString() {
-		return "AccionJustificacion [idAccionReclamo=" + idAccionReclamo + ", fechaHoraReclamo=" + fechaHoraReclamo
+		return "AccionJustificacion [idAccionReclamo=" + id + ", fechaHoraReclamo=" + fechaHora
 				+ ", detalle=" + detalle + ", reclamo=" + reclamo + ", analista=" + analista + "]";
 	} 
 	
