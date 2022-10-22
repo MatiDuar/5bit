@@ -1,7 +1,5 @@
 package com.services;
 
-import java.sql.Date;
-import java.util.LinkedList;
 import java.util.List;
 
 import javax.ejb.LocalBean;
@@ -11,23 +9,23 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
 
-import com.entities.Departamento;
-import com.entities.Genero;
-import com.entities.ITR;
 import com.entities.Usuario;
 import com.exception.ServicesException;
 
+/**
+ * Session Bean implementation class UsuarioBean1
+ */
 @Stateless
 @LocalBean
 public class UsuarioBean implements UsuarioBeanRemote {
-	
+
 	@PersistenceContext
 	private EntityManager em;
 	
-	public UsuarioBean() {
-		
-	}
-	
+    public UsuarioBean() {
+        // TODO Auto-generated constructor stub
+    }
+    
 //	@Override
 //	public void crearUsuario(String documento, String nombreUsuario, String contrasena, String apellido1, String apellido2,
 //			String nombre1, String nombre2, Date fechaNacimiento, Long idGenero, Long idDepartamento, String localidad,
@@ -61,8 +59,8 @@ public class UsuarioBean implements UsuarioBeanRemote {
 //		}
 //		
 //	}
-	
-	@Override
+    
+    @Override
 	public void crearUsuario(Usuario user) throws ServicesException {
 		
 		try {
@@ -95,11 +93,11 @@ public class UsuarioBean implements UsuarioBeanRemote {
 	
 	
 	@Override
-	public void modificarUsuario(Long id) throws ServicesException{
+	public void modificarUsuario(Usuario user) throws ServicesException{
 		
 		try {
 			
-			Usuario user= em.find(Usuario.class, id);
+			em.merge(user);
 			
 			em.flush();
 			
@@ -109,11 +107,17 @@ public class UsuarioBean implements UsuarioBeanRemote {
 	}
 	
 	@Override
-	public List<Usuario> obtenerUsuarios() {
+	public List<Usuario> obtenerUsuarios() throws ServicesException {
 		
-		TypedQuery<Usuario> query = em.createQuery("SELECT DISTINCT u FROM USUARIOS u",Usuario.class);
+		try {
 		
-		return query.getResultList();
+			TypedQuery<Usuario> query = em.createQuery("SELECT DISTINCT u FROM USUARIOS u",Usuario.class);
+		
+			return query.getResultList();
+		
+		}catch(PersistenceException e) {
+			throw new ServicesException("No se pudo obtener la lista de usuarios"); 
+		}
 		
 	}
 	
@@ -132,14 +136,17 @@ public class UsuarioBean implements UsuarioBeanRemote {
 	}
 	
 	@Override
-	public boolean estaUsuario (Usuario user) {
-		boolean esta= false;
-		List<Usuario> lista = obtenerUsuarios();
-		if(lista.contains(user)) {
-			esta= true;
+	public Usuario verificarUsuario (String nombreUsuario, String contrasena) throws ServicesException {
+		
+		try {
+			
+			TypedQuery<Usuario> query = em.createQuery("SELECT u FROM USUARIOS u WHERE u.NOMBREUSUARIO = :nombreUsuario AND u.CONTRASENA= :contrasena AND u.ACTIVO=1",Usuario.class);
+		
+			return query.getSingleResult();
+			
+		}catch(PersistenceException e) {
+			throw new ServicesException("No se encontro el usuario"); 
 		}
-		return esta;
 	}
 
-	
 }
