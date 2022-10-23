@@ -82,14 +82,6 @@ public class AccionConstancia implements Serializable {
 
 	public void setAnalista(Analista analista) {
 		this.analista = analista;
-	}
-
-
-	@Override
-	public String toString() {
-		return "AccionConstancia [idAccionConstancia=" + idAccionConstancia + ", fechaHora=" + fechaHora
-				+ ", detalleConstancia=" + detalleConstancia + ", constancia=" + constancia + ", analista=" + analista
-				+ "]";
 	} 
    
 }
