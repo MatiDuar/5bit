@@ -90,7 +90,7 @@ public class TipoActividadBean implements TipoActividadBeanRemote {
 		
 		try {
 		
-			TypedQuery<TipoActividad> query = em.createQuery("SELECT DISTINCT t FROM TIPOS_ACTIVIDADES t",TipoActividad.class);
+			TypedQuery<TipoActividad> query = em.createQuery("SELECT DISTINCT t FROM TipoActividad t",TipoActividad.class);
 		
 			return query.getResultList();
 		

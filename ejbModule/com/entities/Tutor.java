@@ -8,43 +8,20 @@ import javax.persistence.*;
  *
  */
 @Entity
-public class Tutor implements Serializable {
+@PrimaryKeyJoinColumn(referencedColumnName="id")
+public class Tutor extends Usuario implements Serializable {
 
 	public Tutor() {
 		super();
 	} 
 	
 	private static final long serialVersionUID = 1L;	
-	
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
-	
-	@ManyToOne(optional=false)
-	private Usuario usuario;
-	
 	@ManyToOne(optional=false)
 	private AreaTutor areaTutor;
 	
 	@ManyToOne(optional=false)
 	private TipoTutor tipoTutor;
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Usuario getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
 
 	public AreaTutor getAreaTutor() {
 		return areaTutor;
@@ -62,11 +39,6 @@ public class Tutor implements Serializable {
 		this.tipoTutor = tipoTutor;
 	}
 
-	@Override
-	public String toString() {
-		return "Tutor [id=" + id + ", usuario=" + usuario + ", areaTutor=" + areaTutor + ", tipoTutor=" + tipoTutor
-				+ "]";
-	}
 	
 	
 	

@@ -81,7 +81,7 @@ public class AreaTutorBean implements AreaTutorBeanRemote {
 		
 		try {
 		
-			TypedQuery<AreaTutor> query = em.createQuery("SELECT DISTINCT t FROM AREAS_TUTORES t",AreaTutor.class);
+			TypedQuery<AreaTutor> query = em.createQuery("SELECT DISTINCT t FROM AreaTutor t",AreaTutor.class);
 		
 			return query.getResultList();
 		

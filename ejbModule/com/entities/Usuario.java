@@ -16,7 +16,8 @@ import javax.persistence.ManyToOne;
  */
 
 @Entity
-public class Usuario implements Serializable {
+@Inheritance(strategy=InheritanceType.JOINED)
+public abstract class Usuario implements Serializable {
 
 	public Usuario() {
 		super();

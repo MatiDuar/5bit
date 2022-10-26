@@ -84,7 +84,7 @@ public class TutorBean implements TutorBeanRemote {
 		
 		try {
 		
-			TypedQuery<Tutor> query = em.createQuery("SELECT DISTINCT t FROM TUTORES t",Tutor.class);
+			TypedQuery<Tutor> query = em.createQuery("SELECT DISTINCT t FROM Tutor t",Tutor.class);
 		
 			return query.getResultList();
 		

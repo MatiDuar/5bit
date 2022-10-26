@@ -80,7 +80,7 @@ public class AnalistaBean implements AnalistaBeanRemote {
 		
 		try {
 		
-			TypedQuery<Analista> query = em.createQuery("SELECT DISTINCT a FROM ANALISTAS a",Analista.class);
+			TypedQuery<Analista> query = em.createQuery("SELECT DISTINCT a FROM Analista a",Analista.class);
 		
 			return query.getResultList();
 		

@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
 
+import com.entities.TipoTutor;
 import com.entities.Tutor;
 import com.exception.ServicesException;
 
@@ -15,19 +16,20 @@ import com.exception.ServicesException;
  * Session Bean implementation class TipoTutor
  */
 @Stateless
-public class TipoTutor implements TipoTutorRemote {
+public class TipoTutorBean implements TipoTutorBeanRemote {
 
-    public TipoTutor() {
+    public TipoTutorBean() {
     }
     
     @PersistenceContext
 	private EntityManager em;
     
     @Override
-   	public void crearTipoTutor(TipoTutor tipoTutor) throws ServicesException {
+   	public void crearTipoTutor(String nombre) throws ServicesException {
    		
    		try {
-   			
+   			TipoTutor tipoTutor=new TipoTutor();
+   			tipoTutor.setNombre(nombre);
    			em.persist(tipoTutor);
    			em.flush();		
    			
@@ -82,7 +84,7 @@ public class TipoTutor implements TipoTutorRemote {
 		
 		try {
 		
-			TypedQuery<TipoTutor> query = em.createQuery("SELECT DISTINCT t FROM TIPOS_TUTORES t",TipoTutor.class);
+			TypedQuery<TipoTutor> query = em.createQuery("SELECT DISTINCT t FROM TipoTutor t",TipoTutor.class);
 		
 			return query.getResultList();
 		
