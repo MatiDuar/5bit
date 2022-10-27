@@ -2,7 +2,6 @@ package com.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import javax.persistence.ManyToOne;
 
 /**
  * Entity implementation class for Entity: ITR
@@ -17,8 +16,11 @@ public class ITR implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
+//	@Id
+//	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_ITR" )
+	@SequenceGenerator(name = "SEQ_ITR", initialValue = 1, allocationSize = 1)
 	private Long id;
 	
 	@Column(length=50,nullable=false,unique=true)

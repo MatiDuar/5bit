@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.*;
-import javax.persistence.ManyToOne;
 
 /**
  * Entity implementation class for Entity: Usuario
@@ -23,8 +22,11 @@ public class Usuario implements Serializable {
 	}
 	private static final long serialVersionUID = 1L;	
 	
+//	@Id
+//	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_USUARIO" )
+	@SequenceGenerator(name = "SEQ_USUARIO", initialValue = 1, allocationSize = 1)
 	private Long id;
 	
 	@Column(nullable=false,length=50)
