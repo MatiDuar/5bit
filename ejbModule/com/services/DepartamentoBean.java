@@ -1,20 +1,20 @@
 package com.services;
 
-import javax.ejb.LocalBean;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
 
 import com.entities.Departamento;
-import com.entities.Usuario;
+
 import com.exception.ServicesException;
 
 /**
  * Session Bean implementation class DepartamentoBean
  */
 @Stateless
-@LocalBean
+
 public class DepartamentoBean implements DepartamentoBeanRemote {
 
 	@PersistenceContext
@@ -69,5 +69,5 @@ public class DepartamentoBean implements DepartamentoBeanRemote {
 			throw new ServicesException("No se encontro el usuario"); 
 		}
 	}
-    
+
 }

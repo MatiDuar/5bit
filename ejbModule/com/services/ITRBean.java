@@ -1,6 +1,6 @@
 package com.services;
 
-import javax.ejb.LocalBean;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -14,7 +14,7 @@ import com.exception.ServicesException;
  * Session Bean implementation class ITRBean
  */
 @Stateless
-@LocalBean
+
 public class ITRBean implements ITRBeanRemote {
 
 	@PersistenceContext

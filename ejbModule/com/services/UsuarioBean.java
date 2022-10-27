@@ -2,7 +2,8 @@ package com.services;
 
 import java.util.List;
 
-import javax.ejb.LocalBean;
+
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -13,10 +14,11 @@ import com.entities.Usuario;
 import com.exception.ServicesException;
 
 /**
- * Session Bean implementation class UsuarioBean1
+
+ * Session Bean implementation class UsuarioBean
  */
 @Stateless
-@LocalBean
+
 public class UsuarioBean implements UsuarioBeanRemote {
 
 	@PersistenceContext
@@ -140,9 +142,11 @@ public class UsuarioBean implements UsuarioBeanRemote {
 		
 		try {
 			
-			TypedQuery<Usuario> query = em.createQuery("SELECT u FROM USUARIOS u WHERE u.nombreUsuario = :nombreUsuario AND u.contrasena= :contrasena AND u.activo=1",Usuario.class)
-							.setParameter(nombreUsuario, nombreUsuario)
-							.setParameter(contrasena,contrasena);
+
+			TypedQuery<Usuario> query = em.createQuery("SELECT u FROM Usuario u WHERE u.nombreUsuario = :nombreUsuario AND u.contrasena=:contrasena AND u.activo=1",Usuario.class)
+					.setParameter("nombreUsuario", nombreUsuario)
+					.setParameter("contrasena", contrasena);
+
 		
 			return query.getSingleResult();
 			

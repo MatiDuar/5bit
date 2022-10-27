@@ -1,22 +1,24 @@
 package com.services;
 
-import javax.ejb.LocalBean;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
 
-import com.entities.Departamento;
+
 import com.entities.Genero;
-import com.entities.ITR;
+
 import com.exception.ServicesException;
 
 /**
  * Session Bean implementation class GeneroBean
  */
 @Stateless
-@LocalBean
+
 public class GeneroBean implements GeneroBeanRemote {
+	
+	
 
 	@PersistenceContext
 	private EntityManager em;

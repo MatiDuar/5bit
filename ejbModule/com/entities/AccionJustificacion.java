@@ -34,22 +34,25 @@ public class AccionJustificacion implements Serializable {
 		super();
 	}
 
-	public Long getIdAccionReclamo() {
-		return id;
-	}
-
-	public void setIdAccionReclamo(Long idAccionReclamo) {
-		this.id = idAccionReclamo;
-	}
-
-	public Date getFechaHoraReclamo() {
-		return fechaHora;
-	}
-
-	public void setFechaHoraReclamo(Date fechaHoraReclamo) {
-		this.fechaHora = fechaHoraReclamo;
-	}
-
+//<<<<<<< HEAD
+////	public Long getIdAccionReclamo() {
+////		return id;
+////	}
+////
+////	public void setIdAccionReclamo(Long idAccionReclamo) {
+////		this.id = idAccionReclamo;
+////	}
+////
+////	public Date getFechaHoraReclamo() {
+////		return fechaHora;
+////	}
+////
+////	public void setFechaHoraReclamo(Date fechaHoraReclamo) {
+////		this.fechaHora = fechaHoraReclamo;
+////	}
+//
+//=======
+//>>>>>>> paul
 	public String getDetalle() {
 		return detalle;
 	}
@@ -74,11 +77,31 @@ public class AccionJustificacion implements Serializable {
 		this.analista = analista;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Date getFechaHora() {
+		return fechaHora;
+	}
+
+	public void setFechaHora(Date fechaHora) {
+		this.fechaHora = fechaHora;
+	}
+
 	@Override
 	public String toString() {
-		return "AccionJustificacion [idAccionReclamo=" + id + ", fechaHoraReclamo=" + fechaHora
-				+ ", detalle=" + detalle + ", reclamo=" + reclamo + ", analista=" + analista + "]";
-	} 
+
+		return "AccionJustificacion [id=" + id + ", fechaHora=" + fechaHora + ", detalle=" + detalle + ", reclamo="
+				+ reclamo + ", analista=" + analista + "]";
+	}
+
+	
+
 	
    
 }
