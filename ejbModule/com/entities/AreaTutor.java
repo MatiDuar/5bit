@@ -12,9 +12,12 @@ public class AreaTutor implements Serializable {
 	
 private static final long serialVersionUID = 1L;
 	
+//	@Id
+//	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long idAreaTutor;
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_AREA_TUTOR" )
+	@SequenceGenerator(name = "SEQ_AREA_TUTOR", initialValue = 1, allocationSize = 1)
+	private Long id;
 	
 	@Column (nullable=false, length=150,unique=true)
 	private String Nombre;
@@ -23,12 +26,12 @@ private static final long serialVersionUID = 1L;
 		super();
 	}
 
-	public Long getIdAreaTutor() {
-		return idAreaTutor;
+	public Long getId() {
+		return id;
 	}
 
-	public void setIdAreaTutor(Long idAreaTutor) {
-		this.idAreaTutor = idAreaTutor;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getNombre() {
@@ -41,7 +44,7 @@ private static final long serialVersionUID = 1L;
 
 	@Override
 	public String toString() {
-		return "AreaTutor [idAreaTutor=" + idAreaTutor + ", Nombre=" + Nombre + "]";
+		return "AreaTutor [id=" + id + ", Nombre=" + Nombre + "]";
 	}
 	
    

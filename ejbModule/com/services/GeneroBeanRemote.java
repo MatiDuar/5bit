@@ -1,5 +1,7 @@
 package com.services;
 
+import java.util.List;
+
 import javax.ejb.Remote;
 
 import com.entities.Genero;
@@ -13,5 +15,7 @@ public interface GeneroBeanRemote {
 	void borrarGenero(Long id) throws ServicesException;
 
 	Genero buscarGeneroPorId(Long id) throws ServicesException;
+
+	List<Genero> obtenerGeneros() throws ServicesException;
 
 }

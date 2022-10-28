@@ -1,6 +1,8 @@
 package com.entities;
 
 import java.io.Serializable;
+import java.util.Set;
+
 import javax.persistence.*;
 
 /**
@@ -16,12 +18,21 @@ public class Tutor extends Usuario implements Serializable {
 	} 
 	
 	private static final long serialVersionUID = 1L;	
+	
+	
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_TUTOR" )
+	@SequenceGenerator(name = "SEQ_TUTOR", initialValue = 1, allocationSize = 1)
+	private Long idTutor;
+	
+	
 	@ManyToOne(optional=false)
 	private AreaTutor areaTutor;
 	
 	@ManyToOne(optional=false)
 	private TipoTutor tipoTutor;
 
+	@ManyToMany( mappedBy="tutores")
+	 private Set <Evento> eventos;
 
 	public AreaTutor getAreaTutor() {
 		return areaTutor;

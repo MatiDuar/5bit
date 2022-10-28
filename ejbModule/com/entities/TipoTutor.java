@@ -16,8 +16,13 @@ public class TipoTutor implements Serializable {
 	
 	private static final long serialVersionUID = 1L;	
 	
+//	@Id
+//	@GeneratedValue(strategy=GenerationType.AUTO)
+//	private Long id;
+	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_TIPO_TUTOR" )
+	@SequenceGenerator(name = "SEQ_TIPO_TUTOR", initialValue = 1, allocationSize = 1)
 	private Long id;
 	
 	@Column(nullable=false,length=50,unique=true)

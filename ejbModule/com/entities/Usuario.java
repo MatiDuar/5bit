@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.*;
-import javax.persistence.ManyToOne;
 
 /**
  * Entity implementation class for Entity: Usuario
@@ -24,8 +23,11 @@ public abstract class Usuario implements Serializable {
 	}
 	private static final long serialVersionUID = 1L;	
 	
+//	@Id
+//	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_USUARIO" )
+	@SequenceGenerator(name = "SEQ_USUARIO", initialValue = 1, allocationSize = 1)
 	private Long id;
 	
 	@Column(nullable=false,length=50)
@@ -64,6 +66,9 @@ public abstract class Usuario implements Serializable {
 	
 	@Column(nullable=false,length=50)
 	private String mail;
+	
+	@Column(nullable=false,length=50)
+	private String mailInstitucional;
 	
 	@Column(nullable=false,length=50)
 	private String telefono;
@@ -179,6 +184,15 @@ public abstract class Usuario implements Serializable {
 	public void setMail(String mail) {
 		this.mail = mail;
 	}
+	
+	public String getMailInstitucional() {
+		return mailInstitucional;
+	}
+
+	public void setMailInstitucional(String mail) {
+		this.mailInstitucional = mail;
+	}
+
 
 	public String getTelefono() {
 		return telefono;

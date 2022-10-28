@@ -109,7 +109,7 @@ public class UsuarioBean implements UsuarioBeanRemote {
 		
 		try {
 		
-			TypedQuery<Usuario> query = em.createQuery("SELECT DISTINCT u FROM USUARIOS u",Usuario.class);
+			TypedQuery<Usuario> query = em.createQuery("SELECT DISTINCT u FROM Usuario u",Usuario.class);
 		
 			return query.getResultList();
 		
@@ -145,7 +145,8 @@ public class UsuarioBean implements UsuarioBeanRemote {
 			return query.getSingleResult();
 			
 		}catch(PersistenceException e) {
-			throw new ServicesException("No se encontro el usuario"); 
+			return null;
+			 
 		}
 	}
 

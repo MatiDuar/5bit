@@ -13,9 +13,12 @@ public class AccionReclamo implements Serializable {
 
 	
 	private static final long serialVersionUID = 1L;
+//	@Id
+//	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long idAccionReclamo;
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_ACCION_RECLAMO" )
+	@SequenceGenerator(name = "SEQ_ACCION_RECLAMO", initialValue = 1, allocationSize = 1)
+	private Long id;
 	
 	@Column(nullable=false)
 	private Date fechaHoraReclamo;
@@ -30,11 +33,11 @@ public class AccionReclamo implements Serializable {
 	public AccionReclamo() {
 		super();
 	}
-	public Long getIdAccionReclamo() {
-		return idAccionReclamo;
+	public Long getId() {
+		return id;
 	}
-	public void setIdAccionReclamo(Long idAccionReclamo) {
-		this.idAccionReclamo = idAccionReclamo;
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public Date getFechaHoraReclamo() {
 		return fechaHoraReclamo;
@@ -62,7 +65,7 @@ public class AccionReclamo implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "AccionReclamo [idAccionReclamo=" + idAccionReclamo + ", fechaHoraReclamo=" + fechaHoraReclamo
+		return "AccionReclamo [id=" + id + ", fechaHoraReclamo=" + fechaHoraReclamo
 				+ ", detalleReclamo=" + detalleReclamo + ", reclamo=" + reclamo + ", analista=" + analista + "]";
 	}
 	

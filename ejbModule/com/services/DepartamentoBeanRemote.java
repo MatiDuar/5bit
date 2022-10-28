@@ -1,5 +1,7 @@
 package com.services;
 
+import java.util.List;
+
 import javax.ejb.Remote;
 
 import com.entities.Departamento;
@@ -13,5 +15,7 @@ public interface DepartamentoBeanRemote {
 	void borrarDepartamento(Long id) throws ServicesException;
 
 	Departamento buscarDepPorId(Long id) throws ServicesException;
+
+	List<Departamento> obtenerDepartamento() throws ServicesException;
 
 }

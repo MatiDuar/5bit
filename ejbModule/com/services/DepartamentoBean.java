@@ -1,17 +1,22 @@
 package com.services;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
+import javax.persistence.TypedQuery;
 
 import com.entities.Departamento;
+
 import com.exception.ServicesException;
 
 /**
  * Session Bean implementation class DepartamentoBean
  */
 @Stateless
+
 public class DepartamentoBean implements DepartamentoBeanRemote {
 
 	@PersistenceContext
@@ -66,5 +71,22 @@ public class DepartamentoBean implements DepartamentoBeanRemote {
 			throw new ServicesException("No se encontro el usuario"); 
 		}
 	}
+	
+	@Override
+	public List<Departamento> obtenerDepartamento() throws ServicesException {
+		
+		try {
+		
+			TypedQuery<Departamento> query = em.createQuery("SELECT DISTINCT d FROM Departamento d",Departamento.class);
+		
+			return query.getResultList();
+		
+		}catch(PersistenceException e) {
+			throw new ServicesException("No se pudo obtener la lista de Departamentos"); 
+		}
+		
+	}
+    
+    
 
 }

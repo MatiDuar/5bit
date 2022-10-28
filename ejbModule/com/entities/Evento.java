@@ -2,7 +2,9 @@ package com.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.*;
 
@@ -16,53 +18,90 @@ public class Evento implements Serializable {
 	public Evento() {
 		super();
 	}
-	
-	private static final long serialVersionUID = 1L;	
+
+	private static final long serialVersionUID = 1L;
+
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.AUTO)
+//	private Long id;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_EVENTO" )
+	@SequenceGenerator(name = "SEQ_EVENTO", initialValue = 1, allocationSize = 1)
 	private Long id;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	private Date FechaInicio;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	private Date FechaFin;
-	
-	@Column(nullable=false,length=50)
+
+	@Column(nullable = false, length = 50)
 	private String titulo;
-	
+
 	@ManyToOne
 	private TipoActividad tipoActividad;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	private int creditos;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	private int semestre;
 
-	
-	@ManyToMany
-	private List<Tutor> tutoresResponsable;
-	
-	@ManyToMany
-	private List<Analista> analistasGestiona;
-	
-	public List<Tutor> getTutores() {
-		return tutoresResponsable;
+	@JoinTable(name = "RESP_TUTOR_EVENTO", joinColumns = @JoinColumn(name = "FK_EVENTO", nullable = false), 
+			inverseJoinColumns = @JoinColumn(name = "FK_TUTOR_EVENTO", nullable = false))
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+
+	private Set<Tutor> tutores;
+
+	public void addTutor(Tutor tutor) {
+		if (this.tutores == null) {
+			this.tutores = new HashSet<>();
+		}
+
+		this.tutores.add(tutor);
 	}
 
-	public void setTutores(List<Tutor> tutores) {
-		this.tutoresResponsable = tutores;
+	@JoinTable(name = "ANALIST_GEST_EVENT", 
+			joinColumns = @JoinColumn(name = "FK_EVENTO_GESTION", nullable = false), 
+			inverseJoinColumns =@JoinColumn(name = "FK_ANALISTA_EVENTO", nullable = false))
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+
+	private Set<Analista> analistas;
+
+	public void addAnalista(Analista analista) {
+		if (this.analistas == null) {
+			this.analistas = new HashSet<>();
+		}
+
+		this.analistas.add(analista);
 	}
 
-	public List<Analista> getAnalista() {
-		return analistasGestiona;
+
+
+	public Set<Tutor> getTutores() {
+		return tutores;
 	}
 
-	public void setAnalista(List<Analista> analista) {
-		this.analistasGestiona = analista;
+
+
+	public void setTutores(Set<Tutor> tutores) {
+		this.tutores = tutores;
 	}
+
+
+
+	public Set<Analista> getAnalistas() {
+		return analistas;
+	}
+
+
+
+	public void setAnalistas(Set<Analista> analistas) {
+		this.analistas = analistas;
+	}
+
+
 
 	public Long getId() {
 		return id;
@@ -125,8 +164,5 @@ public class Evento implements Serializable {
 		return "Evento [id=" + id + ", FechaInicio=" + FechaInicio + ", FechaFin=" + FechaFin + ", titulo=" + titulo
 				+ ", tipoActividad=" + tipoActividad + ", creditos=" + creditos + ", semestre=" + semestre + "]";
 	}
-	
-	
-	
-   
+
 }

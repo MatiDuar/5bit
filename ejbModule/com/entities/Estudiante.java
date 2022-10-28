@@ -17,6 +17,10 @@ public class Estudiante extends Usuario implements Serializable {
 	
 	private static final long serialVersionUID = 1L;	
 	
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_ESTUDIANTE" )
+	@SequenceGenerator(name = "SEQ_ESTUDIANTE", initialValue = 1, allocationSize = 1)
+	private Long idEstudiate;
+	
 	@ManyToOne(optional=false)
 	private Generacion generacion;
 

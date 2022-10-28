@@ -27,7 +27,7 @@ public class EventoBean implements EventoBeanRemote {
    		
    		try {
    			
-   			em.persist(evento);
+   			em.merge(evento);
    			em.flush();		
    			
    		}catch(PersistenceException e) {
