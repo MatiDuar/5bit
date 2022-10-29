@@ -19,4 +19,6 @@ public interface ITRBeanRemote {
 
 	List<ITR> obtenerItrs() throws ServicesException;
 
+	ITR obtenerItrPorNombre(String nombre) throws ServicesException;
+
 }

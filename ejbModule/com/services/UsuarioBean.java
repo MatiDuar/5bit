@@ -63,11 +63,11 @@ public class UsuarioBean implements UsuarioBeanRemote {
 		
 		try {
 			
-			em.persist(user);
+			em.merge(user);
 			em.flush();		
 			
 		}catch(PersistenceException e) {
-			throw new ServicesException("No se pudo CREAR el usuario"); 
+			throw new ServicesException(e.getMessage()); 
 		}
 	}
 	

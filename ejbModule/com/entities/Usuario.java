@@ -54,7 +54,7 @@ public abstract class Usuario implements Serializable {
 	@Column(nullable=false)
 	private Date fechaNacimiento;
 	
-	@ManyToOne(optional=false)
+	@ManyToOne(optional=true)
 	private Genero genero;
 	
 	@ManyToOne(optional=false)

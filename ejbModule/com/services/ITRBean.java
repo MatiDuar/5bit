@@ -86,5 +86,21 @@ public class ITRBean implements ITRBeanRemote {
 		
 	}
 	
+	@Override
+	public ITR obtenerItrPorNombre(String nombre) throws ServicesException {
+		
+		try {
+		
+			TypedQuery<ITR> query = em.createQuery("SELECT i FROM ITR i WHERE i.nombre=:nombre",ITR.class)
+					.setParameter("nombre", nombre);
+		
+			return query.getSingleResult();
+		
+		}catch(PersistenceException e) {
+			throw new ServicesException("No se pudo obtener el ITR"); 
+		}
+		
+	}
+	
 
 }

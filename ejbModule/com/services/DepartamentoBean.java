@@ -9,7 +9,7 @@ import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
 
 import com.entities.Departamento;
-
+import com.entities.ITR;
 import com.exception.ServicesException;
 
 /**
@@ -83,6 +83,22 @@ public class DepartamentoBean implements DepartamentoBeanRemote {
 		
 		}catch(PersistenceException e) {
 			throw new ServicesException("No se pudo obtener la lista de Departamentos"); 
+		}
+		
+	}
+	
+	@Override
+	public Departamento obtenerDepPorNombre(String nombre) throws ServicesException {
+		
+		try {
+		
+			TypedQuery<Departamento> query = em.createQuery("SELECT i FROM Departamento i WHERE i.nombre=:nombre",Departamento.class)
+					.setParameter("nombre", nombre);
+		
+			return query.getSingleResult();
+		
+		}catch(PersistenceException e) {
+			throw new ServicesException("No se pudo obtener el Departamento"); 
 		}
 		
 	}

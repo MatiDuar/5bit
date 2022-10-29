@@ -18,4 +18,6 @@ public interface DepartamentoBeanRemote {
 
 	List<Departamento> obtenerDepartamento() throws ServicesException;
 
+	Departamento obtenerDepPorNombre(String nombre) throws ServicesException;
+
 }

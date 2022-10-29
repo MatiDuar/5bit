@@ -26,7 +26,7 @@ public class Generacion implements Serializable {
 	private Long id;
 	
 	@Column(nullable=false,length=50,unique=true)
-	private String nombre;
+	private byte anoIngreso;
 	
 	@Column(nullable=false)
 	private Boolean activo;
@@ -39,12 +39,14 @@ public class Generacion implements Serializable {
 		this.id = id;
 	}
 
-	public String getNombre() {
-		return nombre;
+	
+
+	public byte getAnoIngreso() {
+		return anoIngreso;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setAnoIngreso(byte anoIngreso) {
+		this.anoIngreso = anoIngreso;
 	}
 
 	public Boolean getActivo() {
@@ -57,8 +59,10 @@ public class Generacion implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Generacion [id=" + id + ", nombre=" + nombre + ", activo=" + activo + "]";
+		return "Generacion [id=" + id + ", anoIngreso=" + anoIngreso + ", activo=" + activo + "]";
 	}
+
+	
 	
    
 }
