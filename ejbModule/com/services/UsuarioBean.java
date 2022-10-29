@@ -3,7 +3,6 @@ package com.services;
 import java.util.List;
 
 
-
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -67,11 +66,12 @@ public class UsuarioBean implements UsuarioBeanRemote {
 		
 		try {
 			
-			em.persist(user);
+			em.merge(user);
 			em.flush();		
 			
 		}catch(PersistenceException e) {
-			throw new ServicesException("No se pudo CREAR el usuario"); 
+			throw new ServicesException(e.getMessage()); 
+
 		}
 	}
 	
@@ -113,7 +113,8 @@ public class UsuarioBean implements UsuarioBeanRemote {
 		
 		try {
 		
-			TypedQuery<Usuario> query = em.createQuery("SELECT DISTINCT u FROM USUARIOS u",Usuario.class);
+
+			TypedQuery<Usuario> query = em.createQuery("SELECT DISTINCT u FROM Usuario u",Usuario.class);
 		
 			return query.getResultList();
 		
@@ -151,7 +152,9 @@ public class UsuarioBean implements UsuarioBeanRemote {
 			return query.getSingleResult();
 			
 		}catch(PersistenceException e) {
-			throw new ServicesException("No se encontro el usuario"); 
+
+			return null;
+			 
 		}
 	}
 

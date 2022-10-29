@@ -86,8 +86,25 @@ public class AreaTutorBean implements AreaTutorBeanRemote {
 			return query.getResultList();
 		
 		}catch(PersistenceException e) {
-			throw new ServicesException("No se pudo obtener la lista de Tipos de tutor"); 
+
+			throw new ServicesException("No se pudo obtener la lista de Areas"); 
 		}
 		
 	}
+    
+    @Override
+   	public AreaTutor buscarPorNombre(String nombre) throws ServicesException {
+   		
+   		try {
+   		
+   			TypedQuery<AreaTutor> query = em.createQuery("SELECT t FROM AreaTutor t WHERE t.Nombre =:nombre",AreaTutor.class).setParameter("nombre", nombre);
+   		
+   			return query.getSingleResult();
+   		
+   		}catch(PersistenceException e) {
+   			throw new ServicesException("No se pudo obtener el Area tutor"); 
+   		}
+   		
+   	}
+
 }

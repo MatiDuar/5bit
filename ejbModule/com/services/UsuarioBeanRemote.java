@@ -23,5 +23,4 @@ public interface UsuarioBeanRemote {
 
 	Usuario verificarUsuario(String nombreUsuario, String contrasena) throws ServicesException;
 
-
 }

@@ -1,5 +1,7 @@
 package com.services;
 
+
+import java.util.List;
 import javax.ejb.Remote;
 
 import com.entities.Departamento;
@@ -14,5 +16,11 @@ public interface ITRBeanRemote {
 	void borrarITR(Long id) throws ServicesException;
 
 	ITR buscarItrPorId(Long id) throws ServicesException;
+
+
+	List<ITR> obtenerItrs() throws ServicesException;
+
+	ITR obtenerItrPorNombre(String nombre) throws ServicesException;
+
 
 }

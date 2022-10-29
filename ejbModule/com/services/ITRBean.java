@@ -1,10 +1,14 @@
 package com.services;
 
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
+
+import javax.persistence.TypedQuery;
 
 import com.entities.Departamento;
 import com.entities.ITR;
@@ -71,4 +75,35 @@ public class ITRBean implements ITRBeanRemote {
 		}
 	}
 
+	@Override
+	public List<ITR> obtenerItrs() throws ServicesException {
+		
+		try {
+		
+			TypedQuery<ITR> query = em.createQuery("SELECT DISTINCT i FROM ITR i",ITR.class);
+		
+			return query.getResultList();
+		
+		}catch(PersistenceException e) {
+			throw new ServicesException("No se pudo obtener la lista de ITRs"); 
+		}
+		
+	}
+	
+	@Override
+	public ITR obtenerItrPorNombre(String nombre) throws ServicesException {
+		
+		try {
+		
+			TypedQuery<ITR> query = em.createQuery("SELECT i FROM ITR i WHERE i.nombre=:nombre",ITR.class)
+					.setParameter("nombre", nombre);
+		
+			return query.getSingleResult();
+		
+		}catch(PersistenceException e) {
+			throw new ServicesException("No se pudo obtener el ITR"); 
+		}
+		
+	}
+	
 }

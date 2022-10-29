@@ -1,3 +1,4 @@
+
 package com.services;
 
 import java.util.List;
@@ -93,5 +94,22 @@ public class TipoTutorBean implements TipoTutorBeanRemote {
 		}
 		
 	}
+	@Override
+	public TipoTutor obtenerTipoTutorPorNombre(String nombre) throws ServicesException {
+		
+		try {
+		
+			TypedQuery<TipoTutor> query = em.createQuery("SELECT t FROM TipoTutor t WHERE t.nombre=:nombre",TipoTutor.class)
+					.setParameter("nombre", nombre);
+		
+			return query.getSingleResult();
+		
+		}catch(PersistenceException e) {
+			throw new ServicesException("No se pudo obtener el Tipo Tutor"); 
+		}
+		
+	}
+	
 
 }
+

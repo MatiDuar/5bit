@@ -13,8 +13,11 @@ public class AccionJustificacion implements Serializable {
 
 	
 	private static final long serialVersionUID = 1L;
+//	@Id
+//	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_ACCION_JUSTIFICACION" )
+	@SequenceGenerator(name = "SEQ_ACCION_JUSTIFICACION", initialValue = 1, allocationSize = 1)
 	private Long id;
 	
 	@Column(nullable=false)
@@ -34,7 +37,6 @@ public class AccionJustificacion implements Serializable {
 		super();
 	}
 
-//<<<<<<< HEAD
 ////	public Long getIdAccionReclamo() {
 ////		return id;
 ////	}
@@ -51,8 +53,7 @@ public class AccionJustificacion implements Serializable {
 ////		this.fechaHora = fechaHoraReclamo;
 ////	}
 //
-//=======
-//>>>>>>> paul
+
 	public String getDetalle() {
 		return detalle;
 	}
@@ -100,8 +101,4 @@ public class AccionJustificacion implements Serializable {
 				+ reclamo + ", analista=" + analista + "]";
 	}
 
-	
-
-	
-   
 }

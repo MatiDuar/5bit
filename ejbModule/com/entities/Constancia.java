@@ -14,9 +14,12 @@ public class Constancia implements Serializable {
 	
 private static final long serialVersionUID = 1L;	
 	
+//	@Id
+//	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long idConstancia;
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_CONSTANCIA" )
+	@SequenceGenerator(name = "SEQ_CONSTANCIA", initialValue = 1, allocationSize = 1)
+	private Long id;
 	
 	@Column(nullable=false)
 	private Date fechaHora;
@@ -37,12 +40,12 @@ private static final long serialVersionUID = 1L;
 		super();
 	}
 
-	public Long getIdConstancia() {
-		return idConstancia;
+	public Long getId() {
+		return id;
 	}
 
-	public void setIdConstancia(Long idConstancia) {
-		this.idConstancia = idConstancia;
+	public void setId(Long idConstancia) {
+		this.id = idConstancia;
 	}
 
 	public Date getFechaHora() {
@@ -87,7 +90,7 @@ private static final long serialVersionUID = 1L;
 
 	@Override
 	public String toString() {
-		return "Constancia [idConstancia=" + idConstancia + ", fechaHora=" + fechaHora + ", detalle=" + detalle
+		return "Constancia [id=" + id + ", fechaHora=" + fechaHora + ", detalle=" + detalle
 				+ ", evento=" + evento + ", estado=" + estado + ", tipoConstancia=" + tipoConstancia + "]";
 	}
 	

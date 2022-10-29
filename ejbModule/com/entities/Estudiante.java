@@ -17,17 +17,46 @@ public class Estudiante extends Usuario implements Serializable {
 	
 	private static final long serialVersionUID = 1L;	
 	
-	@ManyToOne(optional=false)
-	private Generacion generacion;
 
 
-	public Generacion getGeneracion() {
-		return generacion;
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_ESTUDIANTE" )
+	@SequenceGenerator(name = "SEQ_ESTUDIANTE", initialValue = 1, allocationSize = 1)
+	private Long idEstudiate;
+	
+	@Column
+	private int anoIngreso;
+
+	public Long getIdEstudiate() {
+		return idEstudiate;
 	}
 
-	public void setGeneracion(Generacion generacion) {
-		this.generacion = generacion;
+	public void setIdEstudiate(Long idEstudiate) {
+		this.idEstudiate = idEstudiate;
 	}
+
+	public int getAnoIngreso() {
+		return anoIngreso;
+	}
+
+	public void setAnoIngreso(int anoIngreso) {
+		this.anoIngreso = anoIngreso;
+	}
+	
+	
+	
+//	
+//	@ManyToOne(optional=false)
+//	private Generacion generacion;
+//
+//
+//	public Generacion getGeneracion() {
+//		return generacion;
+//	}
+//
+//	public void setGeneracion(Generacion generacion) {
+//		this.generacion = generacion;
+//	}
+
 
 	
 	

@@ -54,7 +54,7 @@ public abstract class Usuario implements Serializable {
 	@Column(nullable=false)
 	private Date fechaNacimiento;
 	
-	@ManyToOne(optional=false)
+	@ManyToOne
 	private Genero genero;
 	
 	@ManyToOne(optional=false)
@@ -66,6 +66,9 @@ public abstract class Usuario implements Serializable {
 	
 	@Column(nullable=false,length=50)
 	private String mail;
+	
+	@Column(nullable=false,length=50)
+	private String mailInstitucional;
 	
 	@Column(nullable=false,length=50)
 	private String telefono;
@@ -181,6 +184,15 @@ public abstract class Usuario implements Serializable {
 	public void setMail(String mail) {
 		this.mail = mail;
 	}
+	
+	public String getMailInstitucional() {
+		return mailInstitucional;
+	}
+
+	public void setMailInstitucional(String mail) {
+		this.mailInstitucional = mail;
+	}
+
 
 	public String getTelefono() {
 		return telefono;

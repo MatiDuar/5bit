@@ -13,9 +13,12 @@ public class ConvocatoriaAsistencia implements Serializable {
 
 private static final long serialVersionUID = 1L;	
 	
+//	@Id
+//	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long idAsistencia;
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_CONVOCATORIA_ASISTENCIA" )
+	@SequenceGenerator(name = "SEQ_CONVOCATORIA_ASISTENCIA", initialValue = 1, allocationSize = 1)
+	private Long id;
 	
 	@ManyToOne
 	private Estudiante estudiante;
@@ -33,12 +36,12 @@ private static final long serialVersionUID = 1L;
 		super();
 	}
 
-	public Long getIdAsistencia() {
-		return idAsistencia;
+	public Long getId() {
+		return id;
 	}
 
-	public void setIdAsistencia(Long idAsistencia) {
-		this.idAsistencia = idAsistencia;
+	public void setId(Long idAsistencia) {
+		this.id = idAsistencia;
 	}
 
 	public Estudiante getEstudiante() {
@@ -75,7 +78,7 @@ private static final long serialVersionUID = 1L;
 
 	@Override
 	public String toString() {
-		return "ConvocatoriaAsistencia [idAsistencia=" + idAsistencia + ", estudiante=" + estudiante + ", evento="
+		return "ConvocatoriaAsistencia [id=" + id + ", estudiante=" + estudiante + ", evento="
 				+ evento + ", calificacion=" + calificacion + ", estadoAsistencia=" + estadoAsistencia + "]";
 	}
 	
