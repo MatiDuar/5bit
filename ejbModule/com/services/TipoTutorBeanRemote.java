@@ -19,5 +19,6 @@ public interface TipoTutorBeanRemote {
 	TipoTutor buscarTipoTutorPorId(Long id) throws ServicesException;
 
 	void crearTipoTutor(String nombre) throws ServicesException;
+		public TipoTutor obtenerTipoTutorPorNombre(String nombre) throws ServicesException;
 
 }

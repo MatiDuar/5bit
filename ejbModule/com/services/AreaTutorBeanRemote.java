@@ -20,4 +20,6 @@ public interface AreaTutorBeanRemote {
 
 	List<AreaTutor> obtenerAreaTutor() throws ServicesException;
 
+	AreaTutor buscarPorNombre(String nombre) throws ServicesException;
+
 }

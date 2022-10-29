@@ -21,17 +21,39 @@ public class Estudiante extends Usuario implements Serializable {
 	@SequenceGenerator(name = "SEQ_ESTUDIANTE", initialValue = 1, allocationSize = 1)
 	private Long idEstudiate;
 	
-	@ManyToOne(optional=false)
-	private Generacion generacion;
+	@Column
+	private int anoIngreso;
 
-
-	public Generacion getGeneracion() {
-		return generacion;
+	public Long getIdEstudiate() {
+		return idEstudiate;
 	}
 
-	public void setGeneracion(Generacion generacion) {
-		this.generacion = generacion;
+	public void setIdEstudiate(Long idEstudiate) {
+		this.idEstudiate = idEstudiate;
 	}
+
+	public int getAnoIngreso() {
+		return anoIngreso;
+	}
+
+	public void setAnoIngreso(int anoIngreso) {
+		this.anoIngreso = anoIngreso;
+	}
+	
+	
+	
+//	
+//	@ManyToOne(optional=false)
+//	private Generacion generacion;
+//
+//
+//	public Generacion getGeneracion() {
+//		return generacion;
+//	}
+//
+//	public void setGeneracion(Generacion generacion) {
+//		this.generacion = generacion;
+//	}
 
 	
 	
