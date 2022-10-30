@@ -157,5 +157,26 @@ public class UsuarioBean implements UsuarioBeanRemote {
 			 
 		}
 	}
+	
+
+	@Override
+	public Usuario buscarNombre (String nombreUsuario) throws ServicesException {
+		
+		try {
+			
+
+			TypedQuery<Usuario> query = em.createQuery("SELECT u FROM Usuario u WHERE u.nombreUsuario = :nombreUsuario",Usuario.class)
+					.setParameter("nombreUsuario", nombreUsuario);
+					
+
+		
+			return query.getSingleResult();
+			
+		}catch(PersistenceException e) {
+
+			return null;
+			 
+		}
+	}
 
 }
