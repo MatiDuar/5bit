@@ -38,7 +38,7 @@ public class ITRBean implements ITRBeanRemote {
    			itr.setDepartamento(dep);
    			itr.setActivo(activo);
    			
-   			em.persist(itr);
+   			em.merge(itr);
    			em.flush();		
    			
    		}catch(PersistenceException e) {
