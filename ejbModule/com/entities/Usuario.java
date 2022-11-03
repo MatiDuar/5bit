@@ -60,6 +60,9 @@ public abstract class Usuario implements Serializable {
 	@ManyToOne(optional=false)
 	private Departamento departamento;
 	
+	@ManyToOne
+	private Rol rol;
+	
 	//se asumio que la localidad se refiere a la direccion y a la ciudad
 	@Column(nullable=false,length=150)
 	private String localidad;
@@ -216,6 +219,15 @@ public abstract class Usuario implements Serializable {
 
 	public void setActivo(Boolean activo) {
 		this.activo = activo;
+	}
+
+	
+	public Rol getRol() {
+		return rol;
+	}
+
+	public void setRol(Rol rol) {
+		this.rol = rol;
 	}
 
 	@Override

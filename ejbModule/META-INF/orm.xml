@@ -105,4 +105,12 @@
 		<table name="ESTADOS_EVENTOS">
 		</table>
 	</entity>
+	<entity class="com.entities.Rol" access="FIELD">
+		<table name="ROLES">
+		</table>
+	</entity>
+	<entity class="com.entities.Funcionalidad" access="FIELD">
+		<table name="FUNCIONALIDADES">
+		</table>
+	</entity>
 </entity-mappings>
