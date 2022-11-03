@@ -47,6 +47,19 @@ public class ITRBean implements ITRBeanRemote {
    	}
     
     @Override
+   	public void actualizarITR(ITR itr) throws ServicesException {
+   	
+   		try {
+   			
+   			em.merge(itr);
+   			em.flush();		
+   			
+   		}catch(PersistenceException e) {
+   			throw new ServicesException("No se pudo CREAR el usuario"); 
+   		}
+   	}
+    
+    @Override
 	public void borrarITR(Long id) throws ServicesException {
 		
 		try {

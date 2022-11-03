@@ -22,5 +22,7 @@ public interface ITRBeanRemote {
 
 	ITR obtenerItrPorNombre(String nombre) throws ServicesException;
 
+	void actualizarITR(ITR itr) throws ServicesException;
+
 
 }
