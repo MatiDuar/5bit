@@ -72,6 +72,14 @@ public class Rol implements Serializable {
 	public String toString() {
 		return "Rol [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + "]";
 	}
+
+	public Set<Funcionalidad> getFuncionalidades() {
+		return funcionalidades;
+	}
+
+	public void setFuncionalidades(Set<Funcionalidad> funcionalidades) {
+		this.funcionalidades = funcionalidades;
+	}
 	
 	
 	
