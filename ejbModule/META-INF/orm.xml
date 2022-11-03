@@ -97,4 +97,12 @@
 		<table name="PLANTILLAS_CONSTANCIAS">
 		</table>
 	</entity>
+	<entity class="com.entities.ModalidadesEventos" access="FIELD">
+		<table name="MODALIDADES_EVENTOS">
+		</table>
+	</entity>
+	<entity class="com.entities.EstadosEventos" access="FIELD">
+		<table name="ESTADOS_EVENTOS">
+		</table>
+	</entity>
 </entity-mappings>
