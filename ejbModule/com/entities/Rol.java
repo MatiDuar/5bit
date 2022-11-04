@@ -1,7 +1,9 @@
 package com.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -34,11 +36,11 @@ public class Rol implements Serializable {
 			inverseJoinColumns = @JoinColumn(name = "FK_FUNCION", nullable = false))
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 
-	private Set<Funcionalidad> funcionalidades;
+	private List<Funcionalidad> funcionalidades;
 
 	public void addFuncionalidad(Funcionalidad funcionalidad) {
 		if (this.funcionalidades == null) {
-			this.funcionalidades = new HashSet<>();
+			this.funcionalidades = new ArrayList<>();
 		}
 
 		this.funcionalidades.add(funcionalidad);
@@ -73,11 +75,11 @@ public class Rol implements Serializable {
 		return "Rol [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + "]";
 	}
 
-	public Set<Funcionalidad> getFuncionalidades() {
+	public List<Funcionalidad> getFuncionalidades() {
 		return funcionalidades;
 	}
 
-	public void setFuncionalidades(Set<Funcionalidad> funcionalidades) {
+	public void setFuncionalidades(List<Funcionalidad> funcionalidades) {
 		this.funcionalidades = funcionalidades;
 	}
 	
