@@ -33,7 +33,7 @@ public class EventoBean implements EventoBeanRemote {
    			em.flush();		
    			
    		}catch(PersistenceException e) {
-   			throw new ServicesException("No se pudo CREAR el evento"); 
+   			throw new ServicesException(e.getMessage()); 
    		}
    	}
     

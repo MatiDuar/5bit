@@ -42,7 +42,7 @@ public class ITRBean implements ITRBeanRemote {
    			em.flush();		
    			
    		}catch(PersistenceException e) {
-   			throw new ServicesException("No se pudo CREAR el usuario"); 
+   			throw new ServicesException("No se pudo CREAR el itr"); 
    		}
    	}
     
@@ -55,7 +55,7 @@ public class ITRBean implements ITRBeanRemote {
    			em.flush();		
    			
    		}catch(PersistenceException e) {
-   			throw new ServicesException("No se pudo CREAR el usuario"); 
+   			throw new ServicesException("No se pudo CREAR el itr"); 
    		}
    	}
     
@@ -70,7 +70,7 @@ public class ITRBean implements ITRBeanRemote {
 			em.flush();
 			
 		}catch(PersistenceException e) {
-			throw new ServicesException("No se pudo BORRAR el usuario"); 
+			throw new ServicesException("No se pudo BORRAR el itr"); 
 		}
 	}
     

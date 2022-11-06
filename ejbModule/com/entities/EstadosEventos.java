@@ -41,7 +41,7 @@ public class EstadosEventos implements Serializable {
 	}
 
 	public void setNombre(String nombre) {
-		this.nombreEstadoEvento = nombreEstadoEvento;
+		this.nombreEstadoEvento = nombre;
 	}
 
 	public Boolean getActivo() {

@@ -41,7 +41,7 @@ public class ModalidadesEventos implements Serializable {
 	}
 
 	public void setNombre(String nombre) {
-		this.nombreModalidadEvento = nombreModalidadEvento;
+		this.nombreModalidadEvento = nombre;
 	}
 
 	public Boolean getActivo() {

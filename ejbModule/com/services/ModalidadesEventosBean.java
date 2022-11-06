@@ -90,7 +90,7 @@ public class ModalidadesEventosBean implements ModalidadesEventosBeanRemote {
 		try {
 			
 					
-			TypedQuery<ModalidadesEventos> query = em.createQuery("SELECT DISTINCT m FROM MODALIDADES_EVENTOS m",ModalidadesEventos.class);
+			TypedQuery<ModalidadesEventos> query = em.createQuery("SELECT DISTINCT m FROM ModalidadesEventos m",ModalidadesEventos.class);
 		
 			return query.getResultList();
 		
@@ -106,7 +106,7 @@ public class ModalidadesEventosBean implements ModalidadesEventosBeanRemote {
 		try {
 			
 
-			TypedQuery<ModalidadesEventos> query = em.createQuery("SELECT m FROM MODALIDADES_EVENTOS m WHERE m.nombreModalidadEvento = :nombreModalidadEvento",ModalidadesEventos.class)
+			TypedQuery<ModalidadesEventos> query = em.createQuery("SELECT m FROM ModalidadesEventos m WHERE m.nombreModalidadEvento = :nombreModalidadEvento",ModalidadesEventos.class)
 					.setParameter("nombreModalidadEvento", nombreModalidadEvento);
 					
 

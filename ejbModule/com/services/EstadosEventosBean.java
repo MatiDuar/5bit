@@ -33,7 +33,7 @@ public class EstadosEventosBean implements EstadosEventosBeanRemote {
    		
    		try {
    			
-   			em.persist(estado);
+   			em.merge(estado);
    			em.flush();		
    			
    		}catch(PersistenceException e) {
@@ -90,7 +90,7 @@ public class EstadosEventosBean implements EstadosEventosBeanRemote {
 		try {
 			
 			//Capaz que esto se rompe porque al crear la clase se le puso al nombre de la tabla "ESTADOSEVENTOS".		
-			TypedQuery<EstadosEventos> query = em.createQuery("SELECT DISTINCT e FROM ESTADOS_EVENTOS e",EstadosEventos.class);
+			TypedQuery<EstadosEventos> query = em.createQuery("SELECT DISTINCT e FROM EstadosEventos e",EstadosEventos.class);
 		
 			return query.getResultList();
 		
@@ -106,7 +106,7 @@ public class EstadosEventosBean implements EstadosEventosBeanRemote {
 		try {
 			
 
-			TypedQuery<EstadosEventos> query = em.createQuery("SELECT e FROM ESTADOS_EVENTOS e WHERE e.nombreEstadoEvento = :nombreEstadoEvento",EstadosEventos.class)
+			TypedQuery<EstadosEventos> query = em.createQuery("SELECT e FROM EstadosEventos e WHERE e.nombreEstadoEvento = :nombreEstadoEvento",EstadosEventos.class)
 					.setParameter("nombreEstadoEvento", nombreEstadoEvento);
 					
 

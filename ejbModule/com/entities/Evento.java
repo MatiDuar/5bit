@@ -41,12 +41,21 @@ public class Evento implements Serializable {
 
 	@ManyToOne
 	private TipoActividad tipoActividad;
+	
+	@ManyToOne
+	private ModalidadesEventos modalidad;
 
 	@Column(nullable = false)
 	private int creditos;
 
 	@Column(nullable = false)
 	private int semestre;
+	
+	@ManyToOne
+	private ITR itr;
+	
+	@ManyToOne
+	private EstadosEventos estado;
 
 	@JoinTable(name = "RESP_TUTOR_EVENTO", joinColumns = @JoinColumn(name = "FK_EVENTO", nullable = false), 
 			inverseJoinColumns = @JoinColumn(name = "FK_TUTOR_EVENTO", nullable = false))
@@ -158,6 +167,42 @@ public class Evento implements Serializable {
 	public void setSemestre(int semestre) {
 		this.semestre = semestre;
 	}
+
+	
+	
+	public ITR getItr() {
+		return itr;
+	}
+
+
+
+	public void setItr(ITR itr) {
+		this.itr = itr;
+	}
+
+
+
+	public ModalidadesEventos getModalidad() {
+		return modalidad;
+	}
+
+
+
+	public void setModalidad(ModalidadesEventos modalidad) {
+		this.modalidad = modalidad;
+	}
+
+	public EstadosEventos getEstado() {
+		return estado;
+	}
+
+
+
+	public void setEstado(EstadosEventos estado) {
+		this.estado = estado;
+	}
+
+
 
 	@Override
 	public String toString() {
