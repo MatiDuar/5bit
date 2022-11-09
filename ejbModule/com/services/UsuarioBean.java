@@ -111,7 +111,7 @@ public class UsuarioBean implements UsuarioBeanRemote {
 		try {
 			
 
-			TypedQuery<Usuario> query = em.createQuery("SELECT u FROM Usuario u WHERE u.nombreUsuario = :nombreUsuario AND u.contrasena=:contrasena AND u.activo=1",Usuario.class)
+			TypedQuery<Usuario> query = em.createQuery("SELECT u FROM Usuario u WHERE u.nombreUsuario = :nombreUsuario AND u.contrasena=:contrasena",Usuario.class)
 					.setParameter("nombreUsuario", nombreUsuario)
 					.setParameter("contrasena", contrasena);
 

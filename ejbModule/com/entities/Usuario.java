@@ -73,6 +73,9 @@ public abstract class Usuario implements Serializable {
 	@Column(nullable=false,length=50)
 	private String telefono;
 	
+	@Column(nullable=false)
+	private Boolean validado;
+	
 	@ManyToOne(optional=false)
 	private ITR itr;
 	
@@ -216,6 +219,16 @@ public abstract class Usuario implements Serializable {
 
 	public void setActivo(Boolean activo) {
 		this.activo = activo;
+	}
+	
+	
+
+	public Boolean getValidado() {
+		return validado;
+	}
+
+	public void setValidado(Boolean valido) {
+		this.validado = valido;
 	}
 
 	@Override
