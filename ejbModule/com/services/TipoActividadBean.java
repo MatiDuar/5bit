@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
 
+import com.entities.ITR;
 import com.entities.TipoActividad;
 import com.entities.Usuario;
 import com.exception.ServicesException;
@@ -96,6 +97,22 @@ public class TipoActividadBean implements TipoActividadBeanRemote {
 		
 		}catch(PersistenceException e) {
 			throw new ServicesException("No se pudo obtener la lista de Tipos de actividad"); 
+		}
+		
+	}
+    
+    @Override
+	public TipoActividad obtenerTipoActividadPorNombre(String nombre) throws ServicesException {
+		
+		try {
+		
+			TypedQuery<TipoActividad> query = em.createQuery("SELECT i FROM TipoActividad i WHERE i.nombre=:nombre",TipoActividad.class)
+					.setParameter("nombre", nombre);
+		
+			return query.getSingleResult();
+		
+		}catch(PersistenceException e) {
+			throw new ServicesException("No se pudo obtener el Tipo Actividad"); 
 		}
 		
 	}

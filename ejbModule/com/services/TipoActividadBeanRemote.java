@@ -20,4 +20,6 @@ public interface TipoActividadBeanRemote {
 
 	TipoActividad buscarTipoActividadPorId(Long id) throws ServicesException;
 
+	TipoActividad obtenerTipoActividadPorNombre(String nombre) throws ServicesException;
+
 }

@@ -1,12 +1,25 @@
 package com.entities;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
+import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 
 /**
  * Entity implementation class for Entity: Evento
@@ -31,10 +44,10 @@ public class Evento implements Serializable {
 	private Long id;
 
 	@Column(nullable = false)
-	private Date FechaInicio;
+	private Timestamp FechaInicio;
 
 	@Column(nullable = false)
-	private Date FechaFin;
+	private Timestamp FechaFin;
 
 	@Column(nullable = false, length = 50)
 	private String titulo;
@@ -51,6 +64,11 @@ public class Evento implements Serializable {
 	@Column(nullable = false)
 	private int semestre;
 	
+	@Column()
+	private String localizacion;
+	
+	
+
 	@ManyToOne
 	private ITR itr;
 	
@@ -61,11 +79,11 @@ public class Evento implements Serializable {
 			inverseJoinColumns = @JoinColumn(name = "FK_TUTOR_EVENTO", nullable = false))
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 
-	private Set<Tutor> tutores;
+	private List<Tutor> tutores;
 
 	public void addTutor(Tutor tutor) {
 		if (this.tutores == null) {
-			this.tutores = new HashSet<>();
+			this.tutores = new ArrayList<>();
 		}
 
 		this.tutores.add(tutor);
@@ -88,13 +106,13 @@ public class Evento implements Serializable {
 
 
 
-	public Set<Tutor> getTutores() {
+	public List<Tutor> getTutores() {
 		return tutores;
 	}
 
 
 
-	public void setTutores(Set<Tutor> tutores) {
+	public void setTutores(List<Tutor> tutores) {
 		this.tutores = tutores;
 	}
 
@@ -109,6 +127,16 @@ public class Evento implements Serializable {
 	public void setAnalistas(Set<Analista> analistas) {
 		this.analistas = analistas;
 	}
+	
+	public String getLocalizacion() {
+		return localizacion;
+	}
+
+
+
+	public void setLocalizacion(String localizacion) {
+		this.localizacion = localizacion;
+	}
 
 
 
@@ -120,19 +148,19 @@ public class Evento implements Serializable {
 		this.id = id;
 	}
 
-	public Date getFechaInicio() {
+	public Timestamp getFechaInicio() {
 		return FechaInicio;
 	}
 
-	public void setFechaInicio(Date fechaInicio) {
+	public void setFechaInicio(Timestamp fechaInicio) {
 		FechaInicio = fechaInicio;
 	}
 
-	public Date getFechaFin() {
+	public Timestamp getFechaFin() {
 		return FechaFin;
 	}
 
-	public void setFechaFin(Date fechaFin) {
+	public void setFechaFin(Timestamp  fechaFin) {
 		FechaFin = fechaFin;
 	}
 
