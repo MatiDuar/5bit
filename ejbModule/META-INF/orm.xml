@@ -105,4 +105,16 @@
 		<table name="ESTADOS_EVENTOS">
 		</table>
 	</entity>
+	<entity class="com.entities.MatriculaMateria" access="FIELD">
+		<table name="MATRICULA_MATERIAS">
+		</table>
+	</entity>
+	<entity class="com.entities.Materia" access="FIELD">
+		<table name="MATERIAS">
+		</table>
+	</entity>
+	<entity class="com.entities.Escolaridad" access="FIELD">
+		<table name="ESCOLARIDADES">
+		</table>
+	</entity>
 </entity-mappings>
