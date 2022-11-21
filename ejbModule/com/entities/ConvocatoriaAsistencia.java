@@ -27,7 +27,7 @@ private static final long serialVersionUID = 1L;
 	private Evento evento;
 	
 	@Column (nullable=false)
-	private int calificacion;
+	private float calificacion;
 	
 	@ManyToOne
 	private EstadoAsistencia estadoAsistencia;
@@ -60,11 +60,11 @@ private static final long serialVersionUID = 1L;
 		this.evento = evento;
 	}
 
-	public int getCalificacion() {
+	public float getCalificacion() {
 		return calificacion;
 	}
 
-	public void setCalificacion(int calificacion) {
+	public void setCalificacion(float calificacion) {
 		this.calificacion = calificacion;
 	}
 

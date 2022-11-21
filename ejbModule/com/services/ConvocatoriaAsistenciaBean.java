@@ -11,7 +11,6 @@ import javax.persistence.TypedQuery;
 import com.entities.ConvocatoriaAsistencia;
 import com.entities.Estudiante;
 import com.entities.Evento;
-import com.entities.Usuario;
 import com.exception.ServicesException;
 
 @Stateless
@@ -100,6 +99,23 @@ public class ConvocatoriaAsistenciaBean implements ConvocatoriaAsistenciaBeanRem
    		try {
    		
    			TypedQuery<Estudiante> query = em.createQuery("SELECT c.estudiante FROM ConvocatoriaAsistencia c WHERE c.evento =:evento",Estudiante.class)
+   					.setParameter("evento", evento);
+   		
+   			return query.getResultList();
+   		
+   		}catch(PersistenceException e) {
+   			throw new ServicesException("No se pudo obtener la de estudiantes asignados a la Convocatoria Asistencia"); 
+   		}
+   		
+   	}
+    
+    
+    @Override
+   	public List<ConvocatoriaAsistencia> buscarConvocatoriasPorEvento(Evento evento) throws ServicesException {
+   		
+   		try {
+   		
+   			TypedQuery<ConvocatoriaAsistencia> query = em.createQuery("SELECT c FROM ConvocatoriaAsistencia c WHERE c.evento =:evento",ConvocatoriaAsistencia.class)
    					.setParameter("evento", evento);
    		
    			return query.getResultList();

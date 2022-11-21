@@ -27,14 +27,15 @@ public class TipoActividadBean implements TipoActividadBeanRemote {
     }
     
     @Override
-   	public void crearTipoActividad(String nombre, Boolean activo) throws ServicesException {
+   	public void crearTipoActividad(String nombre, Boolean activo, Boolean esCalificado) throws ServicesException {
    		
    		try {
    			
    			TipoActividad ta= new TipoActividad();
    			
    			ta.setNombre(nombre);
-   			
+   			ta.setEsCalificado(esCalificado);
+  			
    			em.persist(ta);
    			em.flush();		
    			

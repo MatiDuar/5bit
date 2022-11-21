@@ -10,7 +10,7 @@ import com.exception.ServicesException;
 @Remote
 public interface TipoActividadBeanRemote {
 
-	void crearTipoActividad(String nombre, Boolean activo) throws ServicesException;
+	void crearTipoActividad(String nombre, Boolean activo, Boolean esCalificado) throws ServicesException;
 
 	void borrarTipoActividad(Long id) throws ServicesException;
 

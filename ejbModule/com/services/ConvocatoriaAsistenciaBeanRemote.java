@@ -28,4 +28,6 @@ public interface ConvocatoriaAsistenciaBeanRemote {
 
 	void borrar(Estudiante estudiante, Evento evento) throws ServicesException;
 
+	List<ConvocatoriaAsistencia> buscarConvocatoriasPorEvento(Evento evento) throws ServicesException;
+
 }

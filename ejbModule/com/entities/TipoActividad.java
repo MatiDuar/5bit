@@ -26,7 +26,10 @@ public class TipoActividad implements Serializable {
 	
 	@Column(nullable=false,length=50,unique=true)
 	private String nombre;
-
+	
+	@Column(nullable=false)
+	private Boolean esCalificado;
+	
 	public Long getId() {
 		return id;
 	}
@@ -41,6 +44,14 @@ public class TipoActividad implements Serializable {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public Boolean getEsCalificado() {
+		return esCalificado;
+	}
+
+	public void setEsCalificado(Boolean esCalificado) {
+		this.esCalificado = esCalificado;
 	}
 
 	@Override
