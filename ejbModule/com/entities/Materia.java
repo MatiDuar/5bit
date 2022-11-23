@@ -1,7 +1,14 @@
 package com.entities;
 
 import java.io.Serializable;
-import javax.persistence.*;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.SequenceGenerator;
 
 /**
  * Entity implementation class for Entity: Materia
@@ -22,8 +29,11 @@ public class Materia implements Serializable {
 	private Long id;
 	
 	@Column (nullable=false, length=150,unique=true)
-	private String Nombre;
+	private String nombre;
 	
+	@ManyToMany( mappedBy="materias")
+	private List <Carrera> carreras;
+
 	
 	public Long getId() {
 		return id;
@@ -34,11 +44,11 @@ public class Materia implements Serializable {
 	}
 
 	public String getNombre() {
-		return Nombre;
+		return nombre;
 	}
 
 	public void setNombre(String nombre) {
-		Nombre = nombre;
+		this.nombre = nombre;
 	}
 	
    

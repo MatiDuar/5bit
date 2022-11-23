@@ -53,10 +53,6 @@
 		<table name="TIPOS_ACTIVIDADES">
 		</table>
 	</entity>
-	<entity class="com.entities.Generacion" access="FIELD">
-		<table name="GENERACIONES">
-		</table>
-	</entity>
 	<entity class="com.entities.EstadoAsistencia" access="FIELD">
 		<table name="ESTADOS_ASISTENCIAS">
 		</table>
@@ -105,16 +101,24 @@
 		<table name="ESTADOS_EVENTOS">
 		</table>
 	</entity>
-	<entity class="com.entities.MatriculaMateria" access="FIELD">
-		<table name="MATRICULA_MATERIAS">
-		</table>
-	</entity>
 	<entity class="com.entities.Materia" access="FIELD">
 		<table name="MATERIAS">
 		</table>
 	</entity>
 	<entity class="com.entities.Escolaridad" access="FIELD">
 		<table name="ESCOLARIDADES">
+		</table>
+	</entity>
+	<entity class="com.entities.Carrera" access="FIELD">
+		<table name="CARRERAS">
+		</table>
+	</entity>
+	<entity class="com.entities.Inscripcion" access="FIELD">
+		<table name="INSCRIPCIONES">
+		</table>
+	</entity>
+	<entity class="com.entities.Matricula" access="FIELD">
+		<table name="MATRICULAS">
 		</table>
 	</entity>
 </entity-mappings>

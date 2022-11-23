@@ -97,12 +97,12 @@ public class AreaTutorBean implements AreaTutorBeanRemote {
    		
    		try {
    		
-   			TypedQuery<AreaTutor> query = em.createQuery("SELECT t FROM AreaTutor t WHERE t.Nombre =:nombre",AreaTutor.class).setParameter("nombre", nombre);
+   			TypedQuery<AreaTutor> query = em.createQuery("SELECT t FROM AreaTutor t WHERE t.nombre =:nombre",AreaTutor.class).setParameter("nombre", nombre);
    		
    			return query.getSingleResult();
    		
    		}catch(PersistenceException e) {
-   			throw new ServicesException("No se pudo obtener el Area tutor"); 
+   			throw new ServicesException(e.getMessage()); 
    		}
    		
    	}

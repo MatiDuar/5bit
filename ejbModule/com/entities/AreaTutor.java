@@ -1,4 +1,4 @@
-package com.entities;
+package com.entities; 
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -20,7 +20,7 @@ private static final long serialVersionUID = 1L;
 	private Long id;
 	
 	@Column (nullable=false, length=150,unique=true)
-	private String Nombre;
+	private String nombre;
 	
 	public AreaTutor() {
 		super();
@@ -35,16 +35,16 @@ private static final long serialVersionUID = 1L;
 	}
 
 	public String getNombre() {
-		return Nombre;
+		return nombre;
 	}
 
 	public void setNombre(String nombre) {
-		Nombre = nombre;
+		this.nombre = nombre;
 	}
 
 	@Override
 	public String toString() {
-		return "AreaTutor [id=" + id + ", Nombre=" + Nombre + "]";
+		return "AreaTutor [id=" + id + ", Nombre=" + nombre + "]";
 	}
 	
    

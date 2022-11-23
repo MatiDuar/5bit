@@ -1,7 +1,20 @@
 package com.entities;
 
 import java.io.Serializable;
-import javax.persistence.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.SequenceGenerator;
 
 /**
  * Entity implementation class for Entity: Estudiante
@@ -25,7 +38,17 @@ public class Estudiante extends Usuario implements Serializable {
 	
 	@Column
 	private int anoIngreso;
+	
+	
+	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+	Set<Inscripcion> inscripciones;
+	public void addInscripcion(Inscripcion inscripcion) {
+		if (this.inscripciones == null) {
+			this.inscripciones = new HashSet<>();
+		}
 
+		this.inscripciones.add(inscripcion);
+	}
 	public Long getIdEstudiate() {
 		return idEstudiate;
 	}
@@ -41,21 +64,14 @@ public class Estudiante extends Usuario implements Serializable {
 	public void setAnoIngreso(int anoIngreso) {
 		this.anoIngreso = anoIngreso;
 	}
+	public Set<Inscripcion> getInscripciones() {
+		return inscripciones;
+	}
+	public void setInscripciones(Set<Inscripcion> inscripciones) {
+		this.inscripciones = inscripciones;
+	}
 	
-	
-	
-//	
-//	@ManyToOne(optional=false)
-//	private Generacion generacion;
-//
-//
-//	public Generacion getGeneracion() {
-//		return generacion;
-//	}
-//
-//	public void setGeneracion(Generacion generacion) {
-//		this.generacion = generacion;
-//	}
+
 
 
 	

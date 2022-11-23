@@ -42,7 +42,7 @@ public class ITRBean implements ITRBeanRemote {
    			em.flush();		
    			
    		}catch(PersistenceException e) {
-   			throw new ServicesException("No se pudo CREAR el itr"); 
+   			throw new ServicesException("No se pudo crear el ITR"); 
    		}
    	}
     
@@ -114,7 +114,7 @@ public class ITRBean implements ITRBeanRemote {
 			return query.getSingleResult();
 		
 		}catch(PersistenceException e) {
-			throw new ServicesException("No se pudo obtener el ITR"); 
+			return null;
 		}
 		
 	}

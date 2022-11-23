@@ -37,6 +37,7 @@ public class UsuarioBean implements UsuarioBeanRemote {
 			em.flush();		
 			
 		}catch(PersistenceException e) {
+			
 			throw new ServicesException(e.getMessage()); 
 
 		}
