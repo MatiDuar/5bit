@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ejb.Remote;
 
+import com.entities.Estudiante;
 import com.entities.Inscripcion;
 import com.exception.ServicesException;
 
@@ -19,5 +20,7 @@ public interface InscripcionBeanRemote {
 	void crearInscripcion(Inscripcion inscripcion) throws ServicesException;
 
 	List<Inscripcion> obtenerInscripciones() throws ServicesException;
+
+	List<Inscripcion> obtenerInscripcionesPorEstudiante(Estudiante es) throws ServicesException;
 
 }

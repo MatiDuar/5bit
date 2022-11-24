@@ -58,10 +58,10 @@ public class Evento implements Serializable {
 	@ManyToOne
 	private ModalidadesEventos modalidad;
 
-	@Column(nullable = false)
+	@Column(nullable = true)
 	private int creditos;
 
-	@Column(nullable = false)
+	@Column(nullable = true)
 	private int semestre;
 	
 	@Column()

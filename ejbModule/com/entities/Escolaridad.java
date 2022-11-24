@@ -2,9 +2,10 @@ package com.entities;
 
 import java.io.Serializable;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,7 +28,7 @@ public class Escolaridad implements Serializable {
 	@SequenceGenerator(name = "SEQ_ESCOLARIDAD", initialValue = 1, allocationSize = 1)
 	private Long id;
 	
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER)
 	Set<Matricula>matriculas;
 	
 	public void addMatricula(Matricula matricula) {

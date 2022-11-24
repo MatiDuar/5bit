@@ -8,7 +8,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
 
-import com.entities.Escolaridad;
+import com.entities.Estudiante;
 import com.entities.Inscripcion;
 import com.exception.ServicesException;
 
@@ -84,6 +84,23 @@ public class InscripcionBean implements InscripcionBeanRemote {
 		try {
 
 			TypedQuery<Inscripcion> query = em.createQuery("SELECT DISTINCT i FROM Inscripcion i", Inscripcion.class);
+
+			return query.getResultList();
+
+		} catch (PersistenceException e) {
+
+			throw new ServicesException("No se pudo obtener la lista de Inscripciones");
+		}
+
+	}
+	
+	@Override
+	public List<Inscripcion> obtenerInscripcionesPorEstudiante(Estudiante es) throws ServicesException {
+
+		try {
+
+			TypedQuery<Inscripcion> query = em.createQuery("SELECT  i FROM Inscripcion i WHERE i.estudiante=:estudiante", Inscripcion.class)
+					.setParameter("estudiante", es);
 
 			return query.getResultList();
 

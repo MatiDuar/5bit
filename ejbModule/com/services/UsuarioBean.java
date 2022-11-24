@@ -134,10 +134,7 @@ public class UsuarioBean implements UsuarioBeanRemote {
 			
 
 			TypedQuery<Usuario> query = em.createQuery("SELECT u FROM Usuario u WHERE u.nombreUsuario = :nombreUsuario",Usuario.class)
-					.setParameter("nombreUsuario", nombreUsuario);
-					
-
-		
+					.setParameter("nombreUsuario", nombreUsuario);	
 			return query.getSingleResult();
 			
 		}catch(PersistenceException e) {

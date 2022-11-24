@@ -31,6 +31,9 @@ public class Matricula implements Serializable {
 	
 	@Column(nullable=false)
 	private int creditos;	
+	
+	@Column(nullable=false)
+	private int semestre;	
 
 
 	
@@ -42,6 +45,12 @@ public class Matricula implements Serializable {
 	
 	@ManyToOne(cascade=CascadeType.ALL)
 	private Escolaridad escolaridad;
+	
+	@ManyToOne(cascade=CascadeType.ALL)
+	private TipoAsignatura tipoAsignatura;
+	
+	@ManyToOne(cascade=CascadeType.ALL)
+	private TipoConvocatoriaMatricula convocatoriaTipo;
 	
 	public Long getId() {
 		return id;
@@ -99,12 +108,42 @@ public class Matricula implements Serializable {
 		this.escolaridad = escolaridad;
 	}
 
+	
+	public int getSemestre() {
+		return semestre;
+	}
+
+	public void setSemestre(int semestre) {
+		this.semestre = semestre;
+	}
+	
+	
+
+	public TipoAsignatura getTipoAsignatura() {
+		return tipoAsignatura;
+	}
+
+	public void setTipoAsignatura(TipoAsignatura tipoAsignatura) {
+		this.tipoAsignatura = tipoAsignatura;
+	}
+
+	public TipoConvocatoriaMatricula getConvocatoriaTipo() {
+		return convocatoriaTipo;
+	}
+
+	public void setConvocatoriaTipo(TipoConvocatoriaMatricula convocatoriaTipo) {
+		this.convocatoriaTipo = convocatoriaTipo;
+	}
+
 	@Override
 	public String toString() {
 		return "Matricula [id=" + id + ", activo=" + activo + ", nota=" + nota + ", creditos=" + creditos
-				+ ", fecha_inscripcion=" + fecha_inscripcion + ", materia=" + materia + ", escolaridad=" + escolaridad
-				+ "]";
+				+ ", semestre=" + semestre + ", fecha_inscripcion=" + fecha_inscripcion + ", materia=" + materia
+				+ ", escolaridad=" + escolaridad + ", tipoAsignatura=" + tipoAsignatura + ", convocatoriaTipo="
+				+ convocatoriaTipo + "]";
 	}
+
+
 	
 	
 	
