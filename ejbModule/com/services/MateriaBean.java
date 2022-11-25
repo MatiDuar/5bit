@@ -9,7 +9,6 @@ import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
 
 import com.entities.Carrera;
-import com.entities.Escolaridad;
 import com.entities.Materia;
 import com.exception.ServicesException;
 

@@ -8,7 +8,6 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
 
-import com.entities.Escolaridad;
 import com.entities.Matricula;
 import com.exception.ServicesException;
 
@@ -93,23 +92,7 @@ public class MatriculaBean implements MatriculaBeanRemote {
 		}
 
 	}
-	
-	@Override
-	public List<Matricula> buscarPorEscolaridad(Escolaridad es) throws ServicesException {
 
-		try {
-
-			TypedQuery<Matricula> query = em.createQuery("SELECT m FROM Matricula m WHERE m.escolaridad=:escolaridad", Matricula.class)
-					.setParameter("escolaridad", es);
-
-			return query.getResultList();
-
-		} catch (PersistenceException e) {
-
-			throw new ServicesException("No se pudo obtener la lista de Matriculas");
-		}
-
-	}
 	
 
 }

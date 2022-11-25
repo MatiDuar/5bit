@@ -26,11 +26,18 @@ public class Inscripcion implements Serializable {
 	
 	@ManyToOne
 	private Carrera carrera;
-	
-	@ManyToOne
-	private Escolaridad escolaridad;
 
+
+	@OneToMany(fetch = FetchType.EAGER)
+	Set<Matricula>matriculas;
 	
+	public void addMatricula(Matricula matricula) {
+		if (this.matriculas == null) {
+			this.matriculas = new HashSet<>();
+		}
+
+		this.matriculas.add(matricula);
+	}
 	public Long getId() {
 		return id;
 	}
@@ -63,13 +70,15 @@ public class Inscripcion implements Serializable {
 		this.carrera = carrera;
 	}
 
-	public Escolaridad getEscolaridad() {
-		return escolaridad;
+
+	public Set<Matricula> getMatriculas() {
+		return matriculas;
 	}
 
-	public void setEscolaridad(Escolaridad escolaridad) {
-		this.escolaridad = escolaridad;
+	public void setMatriculas(Set<Matricula> matriculas) {
+		this.matriculas = matriculas;
 	}
+
 
 
 	private static final long serialVersionUID = 1L;	
@@ -80,7 +89,7 @@ public class Inscripcion implements Serializable {
 	@Override
 	public String toString() {
 		return "Inscripcion [id=" + id + ", activo=" + activo + ", estudiante=" + estudiante + ", carrera=" + carrera
-				+ ", escolaridad=" + escolaridad + "]";
+				+ "]";
 	} 
 	
 

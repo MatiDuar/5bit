@@ -44,7 +44,7 @@ public class Matricula implements Serializable {
 	private Materia materia;
 	
 	@ManyToOne(cascade=CascadeType.ALL)
-	private Escolaridad escolaridad;
+	private Inscripcion inscripcion;
 	
 	@ManyToOne(cascade=CascadeType.ALL)
 	private TipoAsignatura tipoAsignatura;
@@ -100,15 +100,17 @@ public class Matricula implements Serializable {
 		this.materia = materia;
 	}
 
-	public Escolaridad getEscolaridad() {
-		return escolaridad;
-	}
-
-	public void setEscolaridad(Escolaridad escolaridad) {
-		this.escolaridad = escolaridad;
-	}
+	
 
 	
+	public Inscripcion getInscripcion() {
+		return inscripcion;
+	}
+
+	public void setInscripcion(Inscripcion inscripcion) {
+		this.inscripcion = inscripcion;
+	}
+
 	public int getSemestre() {
 		return semestre;
 	}
@@ -139,9 +141,10 @@ public class Matricula implements Serializable {
 	public String toString() {
 		return "Matricula [id=" + id + ", activo=" + activo + ", nota=" + nota + ", creditos=" + creditos
 				+ ", semestre=" + semestre + ", fecha_inscripcion=" + fecha_inscripcion + ", materia=" + materia
-				+ ", escolaridad=" + escolaridad + ", tipoAsignatura=" + tipoAsignatura + ", convocatoriaTipo="
+				+ ", inscripcion=" + inscripcion + ", tipoAsignatura=" + tipoAsignatura + ", convocatoriaTipo="
 				+ convocatoriaTipo + "]";
 	}
+
 
 
 	

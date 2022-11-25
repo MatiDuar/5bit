@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.ejb.Remote;
 
-import com.entities.Escolaridad;
 import com.entities.Matricula;
 import com.exception.ServicesException;
 
@@ -21,6 +20,5 @@ public interface MatriculaBeanRemote {
 
 	void crearMatricula(Matricula matricula) throws ServicesException;
 
-	List<Matricula> buscarPorEscolaridad(Escolaridad es) throws ServicesException;
 
 }
