@@ -22,4 +22,6 @@ public interface MateriaBeanRemote {
 
 	Materia obtenerMateriaPorNombre(String nombre) throws ServicesException;
 
+	void crearMateria(String nombre) throws ServicesException;
+
 }

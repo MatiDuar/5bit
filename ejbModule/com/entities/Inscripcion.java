@@ -1,6 +1,9 @@
 package com.entities;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.*;
 
 /**
@@ -26,7 +29,7 @@ public class Inscripcion implements Serializable {
 	
 	@ManyToOne
 	private Escolaridad escolaridad;
-	
+
 	
 	public Long getId() {
 		return id;

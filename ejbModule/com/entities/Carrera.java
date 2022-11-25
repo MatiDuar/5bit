@@ -32,6 +32,19 @@ public class Carrera implements Serializable {
 	@Column(nullable=false)
 	private int cantSemestre;
 	
+	@Column(nullable=false)
+	private int creditosObligatorios;
+	
+	@Column(nullable=false)
+	private int creditosOptativos;
+	@Column(nullable=false)
+	private int creditosLibreConfiguracion;
+	@Column(nullable=false)
+	private int creditosProyecto;
+	@Column(nullable=false)
+	private int creditosPracticasProfecionales;
+	
+	
 	@JoinTable(name = "CARRERA_MATERIA", joinColumns = @JoinColumn(name = "FK_CARRERA", nullable = false), 
 			inverseJoinColumns = @JoinColumn(name = "FK_MATERIA_CARRERA", nullable = false))
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
@@ -78,11 +91,76 @@ public class Carrera implements Serializable {
 		this.cantSemestre = cantSemestre;
 	}
 
+	public int getCreditosObligatorios() {
+		return creditosObligatorios;
+	}
+
+
+	public void setCreditosObligatorios(int creditosObligatorios) {
+		this.creditosObligatorios = creditosObligatorios;
+	}
+
+
+	public int getCreditosOptativos() {
+		return creditosOptativos;
+	}
+
+
+	public void setCreditosOptativos(int creditosOptativos) {
+		this.creditosOptativos = creditosOptativos;
+	}
+
+
+	public int getCreditosLibreConfiguracion() {
+		return creditosLibreConfiguracion;
+	}
+
+
+	public void setCreditosLibreConfiguracion(int creditosLibreConfiguracion) {
+		this.creditosLibreConfiguracion = creditosLibreConfiguracion;
+	}
+
+
+	public int getCreditosProyecto() {
+		return creditosProyecto;
+	}
+
+
+	public void setCreditosProyecto(int creditosProyecto) {
+		this.creditosProyecto = creditosProyecto;
+	}
+
+
+	public int getCreditosPracticasProfecionales() {
+		return creditosPracticasProfecionales;
+	}
+
+
+	public void setCreditosPracticasProfecionales(int creditosPracticasProfecionales) {
+		this.creditosPracticasProfecionales = creditosPracticasProfecionales;
+	}
+
+
+	public List<Materia> getMaterias() {
+		return materias;
+	}
+
+
+	public void setMaterias(List<Materia> materias) {
+		this.materias = materias;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Carrera [id=" + id + ", nombre=" + nombre + ", activo=" + activo + ", cantSemestre=" + cantSemestre
-				+ "]";
+				+ ", creditosObligatorios=" + creditosObligatorios + ", creditosOptativos=" + creditosOptativos
+				+ ", creditosLibreConfiguracion=" + creditosLibreConfiguracion + ", creditosProyecto="
+				+ creditosProyecto + ", creditosPracticasProfecionales=" + creditosPracticasProfecionales
+				+ ", materias=" + materias + "]";
 	}
+
+	
 	
 	
 	

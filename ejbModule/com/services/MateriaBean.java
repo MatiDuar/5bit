@@ -26,6 +26,20 @@ public class MateriaBean implements MateriaBeanRemote {
 	private EntityManager em;
 
 	@Override
+	public void crearMateria(String nombre) throws ServicesException {
+
+		try {
+			Materia materia=new Materia();
+			materia.setNombre(nombre);
+			em.merge(materia);
+			em.flush();
+
+		} catch (PersistenceException e) {
+			throw new ServicesException("No se pudo CREAR la Materia");
+		}
+	}
+	
+	@Override
 	public void crearMateria(Materia materia) throws ServicesException {
 
 		try {
