@@ -3,18 +3,14 @@ package com.entities;
 import java.io.Serializable;
 import javax.persistence.*;
 
-/**
- * Entity implementation class for Entity: ConvocatoriaAsistencia
- *
- */
+
 public class ConvocatoriaAsistencia implements Serializable {
 
 	
 
 private static final long serialVersionUID = 1L;	
 	
-//	@Id
-//	@GeneratedValue(strategy=GenerationType.AUTO)
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_CONVOCATORIA_ASISTENCIA" )
 	@SequenceGenerator(name = "SEQ_CONVOCATORIA_ASISTENCIA", initialValue = 1, allocationSize = 1)

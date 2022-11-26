@@ -3,10 +3,7 @@ package com.entities;
 import java.io.Serializable;
 import javax.persistence.*;
 
-/**
- * Entity implementation class for Entity: Genero
- *
- */
+
 @Entity
 public class Genero implements Serializable {
 	
@@ -15,9 +12,7 @@ public class Genero implements Serializable {
 	} 
 	
 	private static final long serialVersionUID = 1L;	
-	
-//	@Id
-//	@GeneratedValue(strategy=GenerationType.AUTO)
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_GENERO" )
 	@SequenceGenerator(name = "SEQ_GENERO", initialValue = 1, allocationSize = 1)

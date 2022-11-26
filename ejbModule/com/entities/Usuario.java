@@ -5,14 +5,7 @@ import java.sql.Date;
 
 import javax.persistence.*;
 
-/**
- * Entity implementation class for Entity: Usuario
- *
- */
-/**
- * Esta entidad representa los datos de los usuarios
- *
- */
+
 
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED)
@@ -23,8 +16,6 @@ public abstract class Usuario implements Serializable {
 	}
 	private static final long serialVersionUID = 1L;	
 	
-//	@Id
-//	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_USUARIO" )
 	@SequenceGenerator(name = "SEQ_USUARIO", initialValue = 1, allocationSize = 1)
@@ -60,7 +51,6 @@ public abstract class Usuario implements Serializable {
 	@ManyToOne(optional=false)
 	private Departamento departamento;
 	
-	//se asumio que la localidad se refiere a la direccion y a la ciudad
 	@Column(nullable=false,length=150)
 	private String localidad;
 	

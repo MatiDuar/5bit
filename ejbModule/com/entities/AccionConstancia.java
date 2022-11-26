@@ -5,15 +5,11 @@ import java.sql.Date;
 
 import javax.persistence.*;
 
-/**
- * Entity implementation class for Entity: AccionConstancia
- *
- */
+
 public class AccionConstancia implements Serializable {
 
 	private static final long serialVersionUID = 1L;	
-//	@Id
-//	@GeneratedValue(strategy=GenerationType.AUTO)
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_ACCION_CONSTANCIA" )
 	@SequenceGenerator(name = "SEQ_ACCION_CONSTANCIA", initialValue = 1, allocationSize = 1)
@@ -25,7 +21,6 @@ public class AccionConstancia implements Serializable {
 	@Column (nullable=false, length=150)
 	private String detalle;
 	
-	//Duda si es muchas acciones a muchas contancias
 	@ManyToOne
 	private Constancia constancia;
 	

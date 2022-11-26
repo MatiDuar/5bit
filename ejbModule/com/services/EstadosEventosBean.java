@@ -18,11 +18,7 @@ import com.exception.ServicesException;
 @Stateless
 public class EstadosEventosBean implements EstadosEventosBeanRemote {
 
-    /**
-     * Default constructor. 
-     */
     public EstadosEventosBean() {
-        // TODO Auto-generated constructor stub
     }
     
     @PersistenceContext
@@ -89,7 +85,6 @@ public class EstadosEventosBean implements EstadosEventosBeanRemote {
 		
 		try {
 			
-			//Capaz que esto se rompe porque al crear la clase se le puso al nombre de la tabla "ESTADOSEVENTOS".		
 			TypedQuery<EstadosEventos> query = em.createQuery("SELECT DISTINCT e FROM EstadosEventos e",EstadosEventos.class);
 		
 			return query.getResultList();

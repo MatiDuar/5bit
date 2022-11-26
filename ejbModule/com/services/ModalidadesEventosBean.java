@@ -18,11 +18,7 @@ import com.exception.ServicesException;
 @Stateless
 public class ModalidadesEventosBean implements ModalidadesEventosBeanRemote {
 
-    /**
-     * Default constructor. 
-     */
     public ModalidadesEventosBean() {
-        // TODO Auto-generated constructor stub
     }
     
      @PersistenceContext

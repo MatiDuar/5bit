@@ -5,10 +5,6 @@ import java.sql.Time;
 
 import javax.persistence.*;
 
-/**
- * Entity implementation class for Entity: Justificacion
- *
- */
 public class Justificacion implements Serializable {
 
 	public Justificacion() {
@@ -17,9 +13,7 @@ public class Justificacion implements Serializable {
 	
 	private static final long serialVersionUID = 1L;	
 	
-//	@Id
-//	@GeneratedValue(strategy=GenerationType.AUTO)
-//	private Long id;
+
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_JUSTIFICACION" )

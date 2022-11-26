@@ -20,12 +20,12 @@ import com.exception.ServicesException;
 public class TipoActividadBean implements TipoActividadBeanRemote {
 	
 	
+
+    public TipoActividadBean() {
+    }
 	@PersistenceContext
 	private EntityManager em;
-    public TipoActividadBean() {
-        // TODO Auto-generated constructor stub
-    }
-    
+	
     @Override
    	public void crearTipoActividad(String nombre, Boolean activo, Boolean esCalificado) throws ServicesException {
    		

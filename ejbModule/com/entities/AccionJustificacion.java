@@ -5,16 +5,12 @@ import java.sql.Date;
 
 import javax.persistence.*;
 
-/**
- * Entity implementation class for Entity: AccionJustificacion
- *
- */
+
 public class AccionJustificacion implements Serializable {
 
 	
 	private static final long serialVersionUID = 1L;
-//	@Id
-//	@GeneratedValue(strategy=GenerationType.AUTO)
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_ACCION_JUSTIFICACION" )
 	@SequenceGenerator(name = "SEQ_ACCION_JUSTIFICACION", initialValue = 1, allocationSize = 1)
@@ -26,9 +22,9 @@ public class AccionJustificacion implements Serializable {
 	@Column(nullable=false, length=150)
 	private String detalle;
 	
-	//Duda si son muchas acciones para muchos reclamos
+
 	@ManyToOne
-	private Reclamo reclamo;
+	private Justificacion justificacion;
 	
 	@ManyToOne
 	private Analista analista;
@@ -37,22 +33,6 @@ public class AccionJustificacion implements Serializable {
 		super();
 	}
 
-////	public Long getIdAccionReclamo() {
-////		return id;
-////	}
-////
-////	public void setIdAccionReclamo(Long idAccionReclamo) {
-////		this.id = idAccionReclamo;
-////	}
-////
-////	public Date getFechaHoraReclamo() {
-////		return fechaHora;
-////	}
-////
-////	public void setFechaHoraReclamo(Date fechaHoraReclamo) {
-////		this.fechaHora = fechaHoraReclamo;
-////	}
-//
 
 	public String getDetalle() {
 		return detalle;
@@ -62,12 +42,12 @@ public class AccionJustificacion implements Serializable {
 		this.detalle = detalle;
 	}
 
-	public Reclamo getReclamo() {
-		return reclamo;
+	public Justificacion getReclamo() {
+		return justificacion;
 	}
 
-	public void setReclamo(Reclamo reclamo) {
-		this.reclamo = reclamo;
+	public void setJustificacion(Justificacion justificacion) {
+		this.justificacion = justificacion;
 	}
 
 	public Analista getAnalista() {
@@ -97,8 +77,8 @@ public class AccionJustificacion implements Serializable {
 	@Override
 	public String toString() {
 
-		return "AccionJustificacion [id=" + id + ", fechaHora=" + fechaHora + ", detalle=" + detalle + ", reclamo="
-				+ reclamo + ", analista=" + analista + "]";
+		return "AccionJustificacion [id=" + id + ", fechaHora=" + fechaHora + ", detalle=" + detalle + ", Justificacion="
+				+ justificacion + ", analista=" + analista + "]";
 	}
 
 }

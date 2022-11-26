@@ -16,10 +16,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.SequenceGenerator;
 
-/**
- * Entity implementation class for Entity: Estudiante
- *
- */
+
 @Entity
 @PrimaryKeyJoinColumn(referencedColumnName="id")
 public class Estudiante extends Usuario implements Serializable {

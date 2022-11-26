@@ -5,16 +5,12 @@ import java.sql.Date;
 
 import javax.persistence.*;
 
-/**
- * Entity implementation class for Entity: AccionReclamo
- *
- */
+
 public class AccionReclamo implements Serializable {
 
 	
 	private static final long serialVersionUID = 1L;
-//	@Id
-//	@GeneratedValue(strategy=GenerationType.AUTO)
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_ACCION_RECLAMO" )
 	@SequenceGenerator(name = "SEQ_ACCION_RECLAMO", initialValue = 1, allocationSize = 1)

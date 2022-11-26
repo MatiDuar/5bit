@@ -3,10 +3,7 @@ package com.entities;
 import java.io.Serializable;
 import javax.persistence.*;
 
-/**
- * Entity implementation class for Entity: TipoConvocatoriaMatricula
- *
- */
+
 public class TipoConvocatoriaMatricula implements Serializable {
 
 	

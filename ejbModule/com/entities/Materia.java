@@ -10,10 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 
-/**
- * Entity implementation class for Entity: Materia
- *
- */
+
 public class Materia implements Serializable {
 
 	

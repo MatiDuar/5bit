@@ -5,17 +5,13 @@ import java.sql.Date;
 
 import javax.persistence.*;
 
-/**
- * Entity implementation class for Entity: Constancia
- *
- */
+
 public class Constancia implements Serializable {
 
 	
 private static final long serialVersionUID = 1L;	
 	
-//	@Id
-//	@GeneratedValue(strategy=GenerationType.AUTO)
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_CONSTANCIA" )
 	@SequenceGenerator(name = "SEQ_CONSTANCIA", initialValue = 1, allocationSize = 1)
@@ -35,6 +31,9 @@ private static final long serialVersionUID = 1L;
 	
 	@ManyToOne
 	private TipoConstancia tipoConstancia;
+	
+	@ManyToOne
+	private Estudiante estudiante;
 	
 	public Constancia() {
 		super();
@@ -86,6 +85,14 @@ private static final long serialVersionUID = 1L;
 
 	public void setTipoConstancia(TipoConstancia tipoConstancia) {
 		this.tipoConstancia = tipoConstancia;
+	}
+
+	public Estudiante getEstudiante() {
+		return estudiante;
+	}
+
+	public void setEstudiante(Estudiante estudiante) {
+		this.estudiante = estudiante;
 	}
 
 	@Override

@@ -6,10 +6,7 @@ import java.util.Set;
 
 import javax.persistence.*;
 
-/**
- * Entity implementation class for Entity: Inscripciones
- *
- */
+
 public class Inscripcion implements Serializable {
 	
 	

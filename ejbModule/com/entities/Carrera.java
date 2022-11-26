@@ -6,10 +6,7 @@ import java.util.List;
 
 import javax.persistence.*;
 
-/**
- * Entity implementation class for Entity: Carrera
- *
- */
+
 public class Carrera implements Serializable {
 
 	
@@ -42,7 +39,7 @@ public class Carrera implements Serializable {
 	@Column(nullable=false)
 	private int creditosProyecto;
 	@Column(nullable=false)
-	private int creditosPracticasProfecionales;
+	private int creditosPracticasProfesionales;
 	
 	
 	@JoinTable(name = "CARRERA_MATERIA", joinColumns = @JoinColumn(name = "FK_CARRERA", nullable = false), 
@@ -131,13 +128,13 @@ public class Carrera implements Serializable {
 	}
 
 
-	public int getCreditosPracticasProfecionales() {
-		return creditosPracticasProfecionales;
+	public int getCreditosPracticasProfesionales() {
+		return creditosPracticasProfesionales;
 	}
 
 
-	public void setCreditosPracticasProfecionales(int creditosPracticasProfecionales) {
-		this.creditosPracticasProfecionales = creditosPracticasProfecionales;
+	public void setCreditosPracticasProfesionales(int creditosPracticasProfecionales) {
+		this.creditosPracticasProfesionales = creditosPracticasProfecionales;
 	}
 
 
@@ -156,7 +153,7 @@ public class Carrera implements Serializable {
 		return "Carrera [id=" + id + ", nombre=" + nombre + ", activo=" + activo + ", cantSemestre=" + cantSemestre
 				+ ", creditosObligatorios=" + creditosObligatorios + ", creditosOptativos=" + creditosOptativos
 				+ ", creditosLibreConfiguracion=" + creditosLibreConfiguracion + ", creditosProyecto="
-				+ creditosProyecto + ", creditosPracticasProfecionales=" + creditosPracticasProfecionales
+				+ creditosProyecto + ", creditosPracticasProfecionales=" + creditosPracticasProfesionales
 				+ ", materias=" + materias + "]";
 	}
 

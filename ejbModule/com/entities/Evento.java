@@ -21,10 +21,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 
-/**
- * Entity implementation class for Entity: Evento
- *
- */
+
 @Entity
 public class Evento implements Serializable {
 
@@ -34,9 +31,6 @@ public class Evento implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.AUTO)
-//	private Long id;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_EVENTO" )

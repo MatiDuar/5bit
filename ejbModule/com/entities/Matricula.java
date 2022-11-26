@@ -5,10 +5,7 @@ import java.sql.Date;
 
 import javax.persistence.*;
 
-/**
- * Entity implementation class for Entity: Matricula
- *
- */
+
 public class Matricula implements Serializable {
 
 	

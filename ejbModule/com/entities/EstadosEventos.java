@@ -3,10 +3,7 @@ package com.entities;
 import java.io.Serializable;
 import javax.persistence.*;
 
-/**
- * Entity implementation class for Entity: EstadosEventos
- *
- */
+
  
 @Entity
 public class EstadosEventos implements Serializable {

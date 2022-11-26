@@ -5,10 +5,6 @@ import java.sql.Time;
 
 import javax.persistence.*;
 
-/**
- * Entity implementation class for Entity: Reclamo
- *
- */
 @Entity
 public class Reclamo implements Serializable {
 
@@ -17,9 +13,6 @@ public class Reclamo implements Serializable {
 	} 
 	private static final long serialVersionUID = 1L;	
 	
-//	@Id
-//	@GeneratedValue(strategy=GenerationType.AUTO)
-//	private Long id;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_RECLAMO" )
@@ -28,6 +21,9 @@ public class Reclamo implements Serializable {
 	
 	@Column(nullable=false)
 	private Time fechaHora;
+	
+	@Column(nullable=false)
+	private String detalle;
 	
 	@ManyToOne(optional=false)
 	private Estudiante estudiante;
@@ -76,6 +72,16 @@ public class Reclamo implements Serializable {
 
 	public void setEstado(Estado estado) {
 		this.estado = estado;
+	}
+	
+	
+
+	public String getDetalle() {
+		return detalle;
+	}
+
+	public void setDetalle(String detalle) {
+		this.detalle = detalle;
 	}
 
 	@Override

@@ -20,7 +20,6 @@ public class EstudianteBean implements EstudianteBeanRemote {
 
 
     public EstudianteBean() {
-        // TODO Auto-generated constructor stub
     }
     @PersistenceContext
 	private EntityManager em;

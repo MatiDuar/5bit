@@ -20,13 +20,13 @@ import com.exception.ServicesException;
 
 public class UsuarioBean implements UsuarioBeanRemote {
 
-	@PersistenceContext
-	private EntityManager em;
+	
 	
     public UsuarioBean() {
-        // TODO Auto-generated constructor stub
     }
     
+    @PersistenceContext
+	private EntityManager em;
     
     @Override
 	public void crearUsuario(Usuario user) throws ServicesException {
