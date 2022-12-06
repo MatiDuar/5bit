@@ -30,6 +30,7 @@ public class MatriculaBean implements MatriculaBeanRemote {
 
 			em.merge(matricula);
 			em.flush();
+			
 
 		} catch (PersistenceException e) {
 			throw new ServicesException(e.getMessage());
