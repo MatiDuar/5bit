@@ -90,5 +90,22 @@ public class GeneroBean implements GeneroBeanRemote {
 		}
 		
 	}
+	
+	  
+    @Override
+    public Genero buscarGeneroPorNombre(String nombre) throws ServicesException {
+		
+		try {
+			
+			TypedQuery<Genero> query = em.createQuery("SELECT DISTINCT g FROM Genero g WHERE g.nombre=:nombre",Genero.class)
+					.setParameter("nombre", nombre);
+
+			
+			return query.getSingleResult();
+			
+		}catch(PersistenceException e) {
+			throw new ServicesException("No se encontro el usuario"); 
+		}
+	}
 
 }

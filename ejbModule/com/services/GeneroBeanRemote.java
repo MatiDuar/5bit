@@ -19,5 +19,7 @@ public interface GeneroBeanRemote {
 
 	List<Genero> obtenerGeneros() throws ServicesException;
 
+	Genero buscarGeneroPorNombre(String nombre) throws ServicesException;
+
 
 }
