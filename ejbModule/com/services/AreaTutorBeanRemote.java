@@ -23,4 +23,6 @@ public interface AreaTutorBeanRemote {
 
 	AreaTutor buscarPorNombre(String nombre) throws ServicesException;
 
+	void crearAreaTutor(String nombre) throws ServicesException;
+
 }

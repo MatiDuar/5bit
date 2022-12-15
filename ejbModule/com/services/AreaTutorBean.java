@@ -34,6 +34,19 @@ public class AreaTutorBean implements AreaTutorBeanRemote {
    			throw new ServicesException("No se pudo CREAR el area de tutor"); 
    		}
    	}
+    @Override
+   	public void crearAreaTutor(String nombre) throws ServicesException {
+   		
+   		try {
+   			AreaTutor areaTutor=new AreaTutor();
+   			areaTutor.setNombre(nombre);
+   			em.persist(areaTutor);
+   			em.flush();		
+   			
+   		}catch(PersistenceException e) {
+   			throw new ServicesException("No se pudo CREAR el area de tutor"); 
+   		}
+   	}
     
     @Override
 	public void borrarAreaTutor(Long id) throws ServicesException {
